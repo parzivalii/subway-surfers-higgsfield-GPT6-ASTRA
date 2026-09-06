@@ -1,0 +1,39 @@
+[
+  {
+    "id": "pip-default",
+    "source": "assets/authored/pip-default.glb",
+    "final": "public/models/pip-default.glb",
+    "provider": "Locally authored Three.js geometry; Blender cleanup/export",
+    "vertices": 13764,
+    "triangles": 4588,
+    "meshes": 10,
+    "textures": 0,
+    "materials": 1,
+    "bytes": 724296,
+    "animations": [
+      "idle",
+      "run",
+      "jump",
+      "fall",
+      "land",
+      "slide",
+      "stumble",
+      "defeat",
+      "celebrate",
+      "board"
+    ]
+  },
+  {
+    "id": "station-0",
+    "source": "assets/authored/station-0.glb",
+    "final": "public/models/station-0.glb",
+    "provider": "Locally authored Three.js geometry; Blender cleanup/export",
+    "vertices": 30516,
+    "triangles": 10172,
+    "meshes": 1,
+    "textures": 0,
+    "materials": 1,
+    "bytes": 1099700,
+    "animations": []
+  }
+]

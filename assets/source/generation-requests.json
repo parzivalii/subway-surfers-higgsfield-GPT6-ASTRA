@@ -1,0 +1,18 @@
+{
+  "character": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "1:1",
+    "resolution": "2k",
+    "count": 1,
+    "use_unlim": false,
+    "prompt": "Original stylized full-body cartoon railway courier Pip, youthful adult, cropped teal jacket, cream undershirt, navy cargo trousers, coral high-top sneakers, compact orange backpack. Warm medium-brown skin, expressive large eyes, short sculpted dark curly hair. Appealing athletic 5-head proportions with oversized hands and shoes, clean readable silhouette, production-friendly separated clothing. Neutral A-pose, unobstructed hands and feet, no props in hands, no logos, no text. Matte materials and soft bevelled shapes. Single character. Orthographic front three-quarter view, plain light grey background, neutral studio illumination. Full body with generous margins. Production character reference for 3D reconstruction, no floor props."
+  },
+  "environment": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "1:1",
+    "resolution": "2k",
+    "count": 1,
+    "use_unlim": false,
+    "prompt": "One modular station platform and awning kit for an original premium cartoon 3D railway runner Switchyard Sprint. Warm coastal city, cream stucco, sandstone platform with teal trim, coral scalloped awning, teal rounded train carriage beside it, chunky structural columns, round station clock without lettering, potted palms. Clean readable bevelled shapes, soft matte painted metal, controlled detail. Human scale, unobstructed modules, plain warm-grey background, orthographic three-quarter asset-reference view with no dramatic camera perspective. Separate playable platform top from decorative objects. No people, no written logos or text. Sunny palette cream #fff1cd teal #169c9e coral #f47754. Production-friendly reference for modular mesh modelling."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "archive": "release/switchyard-sprint-demo.zip",
+  "bytes": 4039710,
+  "sha256": "a69f82933c0a931a883e5a76234f4a7d81f560e67750279015c03391e3b63a15",
+  "buildContentHash": "0ad305fa0df8cbf2c29ddbb55219ba2e7bfd666a54acb2b967272cc1d1caf69e",
+  "extractedFilesVerified": 56,
+  "rebuildIdentical": true
+}

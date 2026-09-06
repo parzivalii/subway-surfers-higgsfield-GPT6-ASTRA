@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.npm-cache/
+.tools/
+test-results/
+*.log
+*.blend1
+.env
+.env.*
+!.env.example
+release/

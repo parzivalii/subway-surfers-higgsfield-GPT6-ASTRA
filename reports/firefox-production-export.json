@@ -1,0 +1,184 @@
+{
+  "version": 2,
+  "coins": 2070,
+  "tokens": 11,
+  "boardCharges": 33,
+  "headstarts": 2,
+  "unlocked": {
+    "characters": [
+      "pip",
+      "rumi",
+      "tavi",
+      "jett",
+      "nori"
+    ],
+    "outfits": [
+      "pip-default",
+      "rumi-default",
+      "tavi-default",
+      "jett-default",
+      "nori-default",
+      "pip-alt",
+      "rumi-alt",
+      "tavi-alt",
+      "jett-alt",
+      "nori-alt"
+    ],
+    "boards": [
+      "tide",
+      "ember"
+    ]
+  },
+  "equipped": {
+    "character": "nori",
+    "outfit": "nori-alt",
+    "board": "ember"
+  },
+  "upgrades": {
+    "magnet": 3,
+    "jetpack": 3,
+    "shoes": 3,
+    "multiplier": 3
+  },
+  "missions": {
+    "set": 0,
+    "active": [
+      {
+        "id": "first-stretch",
+        "progress": 150
+      },
+      {
+        "id": "pocket-change",
+        "progress": 20
+      },
+      {
+        "id": "air-time",
+        "progress": 0
+      }
+    ],
+    "completedSets": 0
+  },
+  "permanentMultiplier": 1,
+  "achievements": [
+    "welcome",
+    "friends"
+  ],
+  "statistics": {
+    "runs": 4,
+    "distance": 272,
+    "score": 672,
+    "coins": 40,
+    "jumps": 0,
+    "slides": 0,
+    "laneChanges": 1,
+    "nearMisses": 0,
+    "roofs": 0,
+    "boardsUsed": 1,
+    "powerups": 2,
+    "revives": 1,
+    "duration": 21,
+    "stumbles": 0,
+    "challenges": 0,
+    "maxDistance": 272,
+    "maxScore": 672
+  },
+  "highScores": [
+    {
+      "runId": "run-mtq2y2q6-10-53198210",
+      "score": 672,
+      "distance": 272,
+      "coins": 40,
+      "character": "pip",
+      "mode": "endless",
+      "date": "2026-09-06"
+    },
+    {
+      "runId": "run-mtq2yofc-11-392439431",
+      "score": 0,
+      "distance": 0,
+      "coins": 0,
+      "character": "pip",
+      "mode": "endless",
+      "date": "2026-09-06"
+    },
+    {
+      "runId": "run-mtq2ywn8-10-17329",
+      "score": 0,
+      "distance": 0,
+      "coins": 0,
+      "character": "nori",
+      "mode": "challenge",
+      "date": "2026-09-06"
+    },
+    {
+      "runId": "run-mtq2yxbe-18-775360531",
+      "score": 0,
+      "distance": 0,
+      "coins": 0,
+      "character": "nori",
+      "mode": "endless",
+      "date": "2026-09-06"
+    }
+  ],
+  "challenges": {
+    "sunline-dash": {
+      "bestScore": 0,
+      "bestProgress": 0,
+      "completions": 0
+    }
+  },
+  "hunt": {
+    "letters": [
+      "P"
+    ],
+    "completed": 0
+  },
+  "boxes": [
+    {
+      "id": "box-1",
+      "source": "Three completed runs"
+    }
+  ],
+  "rewardSerial": 1,
+  "processedRuns": [
+    "run-mtq2xrez-4-633644721",
+    "run-mtq2xro8-7-1823499372",
+    "run-mtq2y2q6-10-53198210",
+    "run-mtq2yofc-11-392439431",
+    "run-mtq2ywn8-10-17329",
+    "run-mtq2yxbe-18-775360531"
+  ],
+  "tutorialComplete": true,
+  "settings": {
+    "quality": "low",
+    "music": 0.2,
+    "effects": 0.4,
+    "reducedMotion": true,
+    "cameraShake": false,
+    "bindings": {
+      "left": [
+        "KeyA",
+        "ArrowLeft"
+      ],
+      "right": [
+        "KeyD",
+        "ArrowRight"
+      ],
+      "jump": [
+        "KeyW",
+        "ArrowUp"
+      ],
+      "down": [
+        "KeyS",
+        "ArrowDown"
+      ],
+      "board": [
+        "Space"
+      ],
+      "pause": [
+        "Escape",
+        "KeyP"
+      ]
+    }
+  }
+}

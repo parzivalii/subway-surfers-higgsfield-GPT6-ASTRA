@@ -1,0 +1,47 @@
+{
+  "owner": "root agent only",
+  "provider": "Higgsfield",
+  "initialBalance": 232.16,
+  "verifiedAt": "2026-09-05T20:19:00Z",
+  "verification": "higgsfield_balance read-only API: starter plan, credits=232.16",
+  "fixedCeiling": 116,
+  "rounding": "Conservative whole-credit floor of 0.5 × B",
+  "committed": 4,
+  "reserved": 0,
+  "allocation": {
+    "baseCharacterWorkflowMaximum": 60,
+    "environmentPilotMaximum": 30,
+    "remainingDerivedAssetsMaximum": 26
+  },
+  "policy": "Do not increase ceiling. Verify every charge before submit, include pending reservations, failures and all billed steps, reconcile before further spending.",
+  "jobs": [
+    {
+      "assetId": "pip-source-reference",
+      "model": "nano_banana_pro",
+      "type": "image",
+      "quotedCost": 2,
+      "reserved": 0,
+      "status": "completed",
+      "timestamp": "2026-09-05T20:27:00Z",
+      "jobId": "13dff8f6-f1e1-4101-b4cd-cf9a0a14a0f2",
+      "actualCost": 2,
+      "completedModel": "nano_banana_2",
+      "outputType": "2048x2048 PNG reference; not a 3D mesh"
+    },
+    {
+      "assetId": "station-source-reference",
+      "model": "nano_banana_pro",
+      "type": "image",
+      "quotedCost": 2,
+      "reserved": 0,
+      "status": "completed",
+      "timestamp": "2026-09-05T20:30:00Z",
+      "jobId": "493ff54e-0a02-44f8-8030-d7ec130dc14f",
+      "actualCost": 2,
+      "completedModel": "nano_banana_2",
+      "outputType": "2048x2048 PNG reference; not a 3D mesh"
+    }
+  ],
+  "lastBalance": 228.16,
+  "timestampAccuracy": "Initial and job timestamps below were approximate notes. They are not provider submission timestamps. Provider artifact filenames and job IDs are the authoritative recorded identifiers."
+}

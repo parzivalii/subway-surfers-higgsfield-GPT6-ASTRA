@@ -1,0 +1,840 @@
+{
+  "timestamp": "2026-09-06T17:21:54.055Z",
+  "durationTarget": 1200,
+  "warmupSeconds": 30,
+  "browser": "153.0.8010.12",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "quality": "high",
+  "method": "Real-time automated isolated preview with UI jetpack refresh every four seconds, periodic keyboard lane changes; no accelerated clock. Repeated restarts follow continuous play.",
+  "errors": [],
+  "samples": [
+    {
+      "seconds": 0.157,
+      "distance": 398.99902083333336,
+      "phase": "running",
+      "worldObjects": 419,
+      "calls": 110,
+      "triangles": 319391,
+      "geometries": 36,
+      "textures": 17,
+      "objects": 24,
+      "particles": 111,
+      "memory": {
+        "used": 59728730,
+        "total": 79579150
+      }
+    },
+    {
+      "seconds": 30.128,
+      "distance": 859.9910624999975,
+      "phase": "running",
+      "worldObjects": 420,
+      "calls": 111,
+      "triangles": 525895,
+      "geometries": 43,
+      "textures": 17,
+      "objects": 29,
+      "particles": 106,
+      "memory": {
+        "used": 61692165,
+        "total": 80365597
+      }
+    },
+    {
+      "seconds": 60.257,
+      "distance": 1392.2516249999908,
+      "phase": "running",
+      "worldObjects": 421,
+      "calls": 119,
+      "triangles": 179271,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 34,
+      "particles": 109,
+      "memory": {
+        "used": 56312005,
+        "total": 80889901
+      }
+    },
+    {
+      "seconds": 90.332,
+      "distance": 1990.9353333333124,
+      "phase": "running",
+      "worldObjects": 399,
+      "calls": 113,
+      "triangles": 331523,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 36,
+      "particles": 113,
+      "memory": {
+        "used": 60346899,
+        "total": 81151907
+      }
+    },
+    {
+      "seconds": 120.529,
+      "distance": 2660.525958333315,
+      "phase": "running",
+      "worldObjects": 431,
+      "calls": 112,
+      "triangles": 555323,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 37,
+      "particles": 117,
+      "memory": {
+        "used": 54348596,
+        "total": 80889896
+      }
+    },
+    {
+      "seconds": 150.55,
+      "distance": 3394.259062500035,
+      "phase": "running",
+      "worldObjects": 425,
+      "calls": 114,
+      "triangles": 176615,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 39,
+      "particles": 136,
+      "memory": {
+        "used": 51478193,
+        "total": 81152045
+      }
+    },
+    {
+      "seconds": 180.722,
+      "distance": 4177.283333333474,
+      "phase": "running",
+      "worldObjects": 310,
+      "calls": 112,
+      "triangles": 443519,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 39,
+      "particles": 118,
+      "memory": {
+        "used": 61116008,
+        "total": 93997096
+      }
+    },
+    {
+      "seconds": 210.844,
+      "distance": 4960.75000000025,
+      "phase": "running",
+      "worldObjects": 310,
+      "calls": 114,
+      "triangles": 182471,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 39,
+      "particles": 119,
+      "memory": {
+        "used": 74264379,
+        "total": 107628223
+      }
+    },
+    {
+      "seconds": 240.988,
+      "distance": 5744.216666667026,
+      "phase": "running",
+      "worldObjects": 307,
+      "calls": 114,
+      "triangles": 304219,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 39,
+      "particles": 113,
+      "memory": {
+        "used": 73482915,
+        "total": 107366079
+      }
+    },
+    {
+      "seconds": 271.082,
+      "distance": 6526.816666667136,
+      "phase": "running",
+      "worldObjects": 319,
+      "calls": 114,
+      "triangles": 433611,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 39,
+      "particles": 125,
+      "memory": {
+        "used": 57952322,
+        "total": 107365946
+      }
+    },
+    {
+      "seconds": 301.212,
+      "distance": 7309.850000000579,
+      "phase": "running",
+      "worldObjects": 314,
+      "calls": 115,
+      "triangles": 314503,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 40,
+      "particles": 109,
+      "memory": {
+        "used": 60333291,
+        "total": 107628223
+      }
+    },
+    {
+      "seconds": 331.467,
+      "distance": 8096.783333334022,
+      "phase": "running",
+      "worldObjects": 326,
+      "calls": 116,
+      "triangles": 552195,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 40,
+      "particles": 113,
+      "memory": {
+        "used": 53771935,
+        "total": 107103935
+      }
+    },
+    {
+      "seconds": 361.546,
+      "distance": 8878.083333332692,
+      "phase": "running",
+      "worldObjects": 418,
+      "calls": 126,
+      "triangles": 276403,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 42,
+      "particles": 123,
+      "memory": {
+        "used": 55911900,
+        "total": 107366084
+      }
+    },
+    {
+      "seconds": 391.661,
+      "distance": 9661.116666664491,
+      "phase": "running",
+      "worldObjects": 415,
+      "calls": 118,
+      "triangles": 539407,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 42,
+      "particles": 116,
+      "memory": {
+        "used": 66979638,
+        "total": 107890234
+      }
+    },
+    {
+      "seconds": 421.678,
+      "distance": 10441.983333329628,
+      "phase": "running",
+      "worldObjects": 443,
+      "calls": 123,
+      "triangles": 216347,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 42,
+      "particles": 107,
+      "memory": {
+        "used": 62734146,
+        "total": 107890234
+      }
+    },
+    {
+      "seconds": 451.783,
+      "distance": 11225.016666661428,
+      "phase": "running",
+      "worldObjects": 449,
+      "calls": 116,
+      "triangles": 356479,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 42,
+      "particles": 104,
+      "memory": {
+        "used": 65696576,
+        "total": 107628228
+      }
+    },
+    {
+      "seconds": 482.038,
+      "distance": 12011.516666659887,
+      "phase": "running",
+      "worldObjects": 437,
+      "calls": 123,
+      "triangles": 278467,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 42,
+      "particles": 120,
+      "memory": {
+        "used": 56719338,
+        "total": 107628090
+      }
+    },
+    {
+      "seconds": 512.322,
+      "distance": 12798.883333325011,
+      "phase": "running",
+      "worldObjects": 409,
+      "calls": 115,
+      "triangles": 299603,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 43,
+      "particles": 109,
+      "memory": {
+        "used": 51809159,
+        "total": 107628223
+      }
+    },
+    {
+      "seconds": 542.459,
+      "distance": 13582.349999990143,
+      "phase": "running",
+      "worldObjects": 417,
+      "calls": 111,
+      "triangles": 577539,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 43,
+      "particles": 118,
+      "memory": {
+        "used": 54706347,
+        "total": 107628223
+      }
+    },
+    {
+      "seconds": 572.555,
+      "distance": 14365.383333321943,
+      "phase": "running",
+      "worldObjects": 320,
+      "calls": 120,
+      "triangles": 291199,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 44,
+      "particles": 124,
+      "memory": {
+        "used": 49889843,
+        "total": 108152511
+      }
+    },
+    {
+      "seconds": 602.626,
+      "distance": 15146.683333320412,
+      "phase": "running",
+      "worldObjects": 317,
+      "calls": 114,
+      "triangles": 584059,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 44,
+      "particles": 115,
+      "memory": {
+        "used": 56544255,
+        "total": 108152511
+      }
+    },
+    {
+      "seconds": 632.706,
+      "distance": 15929.28333331888,
+      "phase": "running",
+      "worldObjects": 298,
+      "calls": 121,
+      "triangles": 220619,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 44,
+      "particles": 120,
+      "memory": {
+        "used": 72618267,
+        "total": 108676799
+      }
+    },
+    {
+      "seconds": 662.737,
+      "distance": 16709.71666665205,
+      "phase": "running",
+      "worldObjects": 295,
+      "calls": 121,
+      "triangles": 443387,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 44,
+      "particles": 134,
+      "memory": {
+        "used": 54367491,
+        "total": 108152511
+      }
+    },
+    {
+      "seconds": 692.769,
+      "distance": 17490.583333320465,
+      "phase": "running",
+      "worldObjects": 304,
+      "calls": 119,
+      "triangles": 213991,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 45,
+      "particles": 124,
+      "memory": {
+        "used": 48973411,
+        "total": 108938943
+      }
+    },
+    {
+      "seconds": 722.822,
+      "distance": 18271.44999998888,
+      "phase": "running",
+      "worldObjects": 426,
+      "calls": 112,
+      "triangles": 304327,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 45,
+      "particles": 115,
+      "memory": {
+        "used": 49982139,
+        "total": 109463231
+      }
+    },
+    {
+      "seconds": 752.972,
+      "distance": 19055.78333332397,
+      "phase": "running",
+      "worldObjects": 421,
+      "calls": 114,
+      "triangles": 462035,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 45,
+      "particles": 111,
+      "memory": {
+        "used": 50902964,
+        "total": 109463236
+      }
+    },
+    {
+      "seconds": 782.982,
+      "distance": 19836.21666665905,
+      "phase": "running",
+      "worldObjects": 404,
+      "calls": 114,
+      "triangles": 301671,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 45,
+      "particles": 122,
+      "memory": {
+        "used": 74673446,
+        "total": 109987386
+      }
+    },
+    {
+      "seconds": 813.006,
+      "distance": 20616.64999999413,
+      "phase": "running",
+      "worldObjects": 416,
+      "calls": 118,
+      "triangles": 584003,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 45,
+      "particles": 136,
+      "memory": {
+        "used": 75364944,
+        "total": 110249668
+      }
+    },
+    {
+      "seconds": 843.238,
+      "distance": 21402.716666662556,
+      "phase": "running",
+      "worldObjects": 441,
+      "calls": 114,
+      "triangles": 204759,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 45,
+      "particles": 116,
+      "memory": {
+        "used": 76444472,
+        "total": 110249668
+      }
+    },
+    {
+      "seconds": 873.492,
+      "distance": 22189.216666664317,
+      "phase": "running",
+      "worldObjects": 408,
+      "calls": 115,
+      "triangles": 507075,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 45,
+      "particles": 113,
+      "memory": {
+        "used": 69212086,
+        "total": 109987386
+      }
+    },
+    {
+      "seconds": 903.579,
+      "distance": 22971.81666666607,
+      "phase": "running",
+      "worldObjects": 304,
+      "calls": 116,
+      "triangles": 200211,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 45,
+      "particles": 123,
+      "memory": {
+        "used": 65431775,
+        "total": 109463231
+      }
+    },
+    {
+      "seconds": 933.621,
+      "distance": 23752.25000000115,
+      "phase": "running",
+      "worldObjects": 311,
+      "calls": 118,
+      "triangles": 317503,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 45,
+      "particles": 108,
+      "memory": {
+        "used": 61241667,
+        "total": 109463231
+      }
+    },
+    {
+      "seconds": 963.619,
+      "distance": 24533.116666669564,
+      "phase": "running",
+      "worldObjects": 330,
+      "calls": 116,
+      "triangles": 372283,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 45,
+      "particles": 122,
+      "memory": {
+        "used": 51831759,
+        "total": 109463231
+      }
+    },
+    {
+      "seconds": 993.669,
+      "distance": 25313.98333333798,
+      "phase": "running",
+      "worldObjects": 309,
+      "calls": 114,
+      "triangles": 314083,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 45,
+      "particles": 116,
+      "memory": {
+        "used": 68989683,
+        "total": 109725375
+      }
+    },
+    {
+      "seconds": 1023.957,
+      "distance": 26101.783333339743,
+      "phase": "running",
+      "worldObjects": 309,
+      "calls": 115,
+      "triangles": 515527,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 45,
+      "particles": 108,
+      "memory": {
+        "used": 67815091,
+        "total": 109463231
+      }
+    },
+    {
+      "seconds": 1054.136,
+      "distance": 26886.116666674832,
+      "phase": "running",
+      "worldObjects": 310,
+      "calls": 121,
+      "triangles": 260979,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 45,
+      "particles": 111,
+      "memory": {
+        "used": 70121004,
+        "total": 109725380
+      }
+    },
+    {
+      "seconds": 1084.408,
+      "distance": 27673.050000009927,
+      "phase": "running",
+      "worldObjects": 439,
+      "calls": 113,
+      "triangles": 526859,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 45,
+      "particles": 120,
+      "memory": {
+        "used": 65151378,
+        "total": 109987386
+      }
+    },
+    {
+      "seconds": 1114.414,
+      "distance": 28453.483333345008,
+      "phase": "running",
+      "worldObjects": 445,
+      "calls": 126,
+      "triangles": 227899,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 46,
+      "particles": 135,
+      "memory": {
+        "used": 68651759,
+        "total": 109201087
+      }
+    },
+    {
+      "seconds": 1144.531,
+      "distance": 29236.516666680094,
+      "phase": "running",
+      "worldObjects": 429,
+      "calls": 109,
+      "triangles": 322635,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 46,
+      "particles": 117,
+      "memory": {
+        "used": 71434008,
+        "total": 109463236
+      }
+    },
+    {
+      "seconds": 1174.614,
+      "distance": 30018.683333348512,
+      "phase": "running",
+      "worldObjects": 431,
+      "calls": 119,
+      "triangles": 242403,
+      "geometries": 49,
+      "textures": 17,
+      "objects": 47,
+      "particles": 117,
+      "memory": {
+        "used": 63754150,
+        "total": 109463098
+      }
+    }
+  ],
+  "restarts": [],
+  "graphics": {
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 Ti (0x00002208) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "vendor": "WebKit",
+    "width": 1920,
+    "height": 1080
+  },
+  "navigation": {
+    "domContentLoadedMs": 63.699999999953434,
+    "loadMs": 64.19999999995343,
+    "resources": [
+      {
+        "name": "http://127.0.0.1:4173/assets/index-Bq687XPE.js",
+        "bytes": 259234
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/index-BNqIvI5z.css",
+        "bytes": 6537
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/outfit-latin-600-normal-B7SfZ07L.woff2",
+        "bytes": 14140
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/dm-sans-latin-400-normal-CW0RaeGs.woff2",
+        "bytes": 14200
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/outfit-latin-800-normal-CQna6-G7.woff2",
+        "bytes": 14048
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/dm-sans-latin-600-normal-Aqo67rzb.woff2",
+        "bytes": 14144
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/outfit-latin-400-normal-BGsTXAXT.woff2",
+        "bytes": 14032
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/pip-default.glb",
+        "bytes": 590696
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/pip-alt.glb",
+        "bytes": 619880
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/rumi-default.glb",
+        "bytes": 607576
+      },
+      {
+        "name": "http://127.0.0.1:4173/favicon.svg",
+        "bytes": 251
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/rumi-alt.glb",
+        "bytes": 732980
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/tavi-default.glb",
+        "bytes": 552416
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/tavi-alt.glb",
+        "bytes": 601664
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/jett-default.glb",
+        "bytes": 611948
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/jett-alt.glb",
+        "bytes": 650200
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/nori-default.glb",
+        "bytes": 525512
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/nori-alt.glb",
+        "bytes": 559252
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/station-0.glb",
+        "bytes": 1160744
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/station-1.glb",
+        "bytes": 1160744
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/station-2.glb",
+        "bytes": 1160744
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/mural-0.glb",
+        "bytes": 2476756
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/mural-1.glb",
+        "bytes": 2658888
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/mural-2.glb",
+        "bytes": 2476756
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/waterfront-0.glb",
+        "bytes": 468540
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/waterfront-1.glb",
+        "bytes": 468540
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/waterfront-2.glb",
+        "bytes": 468540
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/board-tide.glb",
+        "bytes": 99664
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/board-ember.glb",
+        "bytes": 80508
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/train.glb",
+        "bytes": 583492
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/movingTrain.glb",
+        "bytes": 583500
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/hurdle.glb",
+        "bytes": 46300
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/barrier.glb",
+        "bytes": 50408
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/obstacle.glb",
+        "bytes": 23028
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/ramp.glb",
+        "bytes": 17100
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/magnet.glb",
+        "bytes": 21684
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/jetpack.glb",
+        "bytes": 65000
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/shoes.glb",
+        "bytes": 77780
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/multiplier.glb",
+        "bytes": 142080
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/letter.glb",
+        "bytes": 20320
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/token.glb",
+        "bytes": 20320
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/tunnel-entrance.glb",
+        "bytes": 73684
+      },
+      {
+        "name": "http://127.0.0.1:4173/models/harbor.glb",
+        "bytes": 59468
+      }
+    ]
+  }
+}

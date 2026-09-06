@@ -1,0 +1,28 @@
+[
+  {
+    "id": "tunnel-entrance",
+    "source": "assets/authored/tunnel-entrance.glb",
+    "final": "public/models/tunnel-entrance.glb",
+    "provider": "Locally authored Three.js geometry; Blender cleanup/export",
+    "vertices": 1908,
+    "triangles": 636,
+    "meshes": 1,
+    "textures": 0,
+    "materials": 1,
+    "bytes": 69856,
+    "animations": []
+  },
+  {
+    "id": "harbor",
+    "source": "assets/authored/harbor.glb",
+    "final": "public/models/harbor.glb",
+    "provider": "Locally authored Three.js geometry; Blender cleanup/export",
+    "vertices": 1536,
+    "triangles": 512,
+    "meshes": 1,
+    "textures": 0,
+    "materials": 1,
+    "bytes": 56384,
+    "animations": []
+  }
+]

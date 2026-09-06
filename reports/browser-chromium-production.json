@@ -1,0 +1,185 @@
+{
+  "browser": "chromium",
+  "baseURL": "http://127.0.0.1:4173",
+  "offlineTest": true,
+  "timestamp": "2026-09-06T17:22:28.811Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "steps": [
+    {
+      "name": "Initial local load, genuine renderer, title and responsive layout",
+      "status": "passed",
+      "durationMs": 2661
+    },
+    {
+      "name": "Fresh player tutorial early exit does not grant completion",
+      "status": "passed",
+      "durationMs": 227
+    },
+    {
+      "name": "Interactive tutorial, one-press lanes, airborne movement, down input, board and results",
+      "status": "passed",
+      "durationMs": 14361
+    },
+    {
+      "name": "Normal run pause, frozen timers, countdown, crash, paid revive and results/restart",
+      "status": "passed",
+      "durationMs": 17540
+    },
+    {
+      "name": "Save import, all five characters and all ten outfits are usable through menus",
+      "status": "passed",
+      "durationMs": 5235
+    },
+    {
+      "name": "Both boards, supplies and all twelve duration upgrades transact and persist",
+      "status": "passed",
+      "durationMs": 3514
+    },
+    {
+      "name": "Missions, box reward exactly once, achievements, records and local challenge",
+      "status": "passed",
+      "durationMs": 692
+    },
+    {
+      "name": "Settings, keyboard rebind, reset defaults, export/import validation, and reset cancel",
+      "status": "passed",
+      "durationMs": 1082
+    },
+    {
+      "name": "Isolated preview overlap, repeat pickup, pause/expiry and no normal save changes",
+      "status": "passed",
+      "durationMs": 20931
+    },
+    {
+      "name": "Focus loss, graphics context recovery, credits and fullscreen control",
+      "status": "passed",
+      "durationMs": 4607
+    },
+    {
+      "name": "Confirmed reset, corrupted storage recovery and unavailable storage session",
+      "status": "passed",
+      "durationMs": 2892
+    },
+    {
+      "name": "Complete cache, actual offline reload and keyboard play",
+      "status": "passed",
+      "durationMs": 873
+    },
+    {
+      "name": "No uncaught runtime errors or external runtime dependencies",
+      "status": "passed",
+      "durationMs": 0
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "externalRequests": [],
+  "screenshots": [
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\title-1280.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\title-1920.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\title-2560.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\tutorial-gameplay.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\tutorial-results.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\gameplay.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\caught.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\results.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\crew-pip-default.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\crew-pip-alt.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\crew-rumi-default.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\crew-rumi-alt.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\crew-tavi-default.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\crew-tavi-alt.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\crew-jett-default.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\crew-jett-alt.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\crew-nori-default.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\crew-nori-alt.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\board-tide.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\board-ember.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\shop-upgrades.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\missions.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\achievements.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\records.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\challenges.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\controls.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\settings.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\preview-overlap.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\context-loss.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\credits.png",
+    "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\chromium-production\\offline-gameplay.png"
+  ],
+  "version": "153.0.8010.12",
+  "initialLoadMs": 1309,
+  "graphics": {
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 Ti (0x00002208) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "vendor": "Google Inc. (NVIDIA)",
+    "width": 1280,
+    "height": 720
+  },
+  "fullscreenEntered": true,
+  "offlineCache": [
+    {
+      "key": "switchyard-1fcd096d175c",
+      "files": [
+        "http://127.0.0.1:4173/assets/dm-sans-latin-400-normal-BwCSEQnW.woff",
+        "http://127.0.0.1:4173/assets/dm-sans-latin-400-normal-CW0RaeGs.woff2",
+        "http://127.0.0.1:4173/assets/dm-sans-latin-600-normal-Aqo67rzb.woff2",
+        "http://127.0.0.1:4173/assets/dm-sans-latin-600-normal-BmdmIIQ2.woff",
+        "http://127.0.0.1:4173/assets/index-BNqIvI5z.css",
+        "http://127.0.0.1:4173/assets/index-Bq687XPE.js",
+        "http://127.0.0.1:4173/assets/outfit-latin-400-normal-BGsTXAXT.woff2",
+        "http://127.0.0.1:4173/assets/outfit-latin-400-normal-DMwTpYkH.woff",
+        "http://127.0.0.1:4173/assets/outfit-latin-600-normal-B7SfZ07L.woff2",
+        "http://127.0.0.1:4173/assets/outfit-latin-600-normal-BEfTtDA7.woff",
+        "http://127.0.0.1:4173/assets/outfit-latin-800-normal-BRHLSPcU.woff",
+        "http://127.0.0.1:4173/assets/outfit-latin-800-normal-CQna6-G7.woff2",
+        "http://127.0.0.1:4173/audio/sunline-shuffle.wav",
+        "http://127.0.0.1:4173/favicon.svg",
+        "http://127.0.0.1:4173/index.html",
+        "http://127.0.0.1:4173/licenses/dm-sans.txt",
+        "http://127.0.0.1:4173/licenses/outfit.txt",
+        "http://127.0.0.1:4173/licenses/react.txt",
+        "http://127.0.0.1:4173/licenses/three.txt",
+        "http://127.0.0.1:4173/models/barrier.glb",
+        "http://127.0.0.1:4173/models/board-ember.glb",
+        "http://127.0.0.1:4173/models/board-tide.glb",
+        "http://127.0.0.1:4173/models/harbor.glb",
+        "http://127.0.0.1:4173/models/hurdle.glb",
+        "http://127.0.0.1:4173/models/jetpack.glb",
+        "http://127.0.0.1:4173/models/jett-alt.glb",
+        "http://127.0.0.1:4173/models/jett-default.glb",
+        "http://127.0.0.1:4173/models/letter.glb",
+        "http://127.0.0.1:4173/models/magnet.glb",
+        "http://127.0.0.1:4173/models/movingTrain.glb",
+        "http://127.0.0.1:4173/models/multiplier.glb",
+        "http://127.0.0.1:4173/models/mural-0.glb",
+        "http://127.0.0.1:4173/models/mural-1.glb",
+        "http://127.0.0.1:4173/models/mural-2.glb",
+        "http://127.0.0.1:4173/models/nori-alt.glb",
+        "http://127.0.0.1:4173/models/nori-default.glb",
+        "http://127.0.0.1:4173/models/obstacle.glb",
+        "http://127.0.0.1:4173/models/pip-alt.glb",
+        "http://127.0.0.1:4173/models/pip-default.glb",
+        "http://127.0.0.1:4173/models/ramp.glb",
+        "http://127.0.0.1:4173/models/rumi-alt.glb",
+        "http://127.0.0.1:4173/models/rumi-default.glb",
+        "http://127.0.0.1:4173/models/shoes.glb",
+        "http://127.0.0.1:4173/models/station-0.glb",
+        "http://127.0.0.1:4173/models/station-1.glb",
+        "http://127.0.0.1:4173/models/station-2.glb",
+        "http://127.0.0.1:4173/models/tavi-alt.glb",
+        "http://127.0.0.1:4173/models/tavi-default.glb",
+        "http://127.0.0.1:4173/models/token.glb",
+        "http://127.0.0.1:4173/models/train.glb",
+        "http://127.0.0.1:4173/models/tunnel-entrance.glb",
+        "http://127.0.0.1:4173/models/waterfront-0.glb",
+        "http://127.0.0.1:4173/models/waterfront-1.glb",
+        "http://127.0.0.1:4173/models/waterfront-2.glb",
+        "http://127.0.0.1:4173/THIRD-PARTY-NOTICES.txt"
+      ]
+    }
+  ],
+  "status": "passed"
+}

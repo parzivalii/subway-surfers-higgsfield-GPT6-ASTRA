@@ -1,0 +1,16 @@
+{
+  "hardwareLimitation": "High-end desktop; representative mainstream laptop and Safari unavailable",
+  "build": "19045",
+  "recordedAt": "2026-09-06T17:30:44.6538302Z",
+  "quality": "medium and high separately",
+  "os": "Microsoft Windows 10 Home",
+  "testResolution": "1920x1080",
+  "cpu": "12th Gen Intel(R) Core(TM) i9-12900K",
+  "memoryBytes": 34088239104,
+  "gpus": [
+    {
+      "Name": "NVIDIA GeForce RTX 3080 Ti",
+      "DriverVersion": "32.0.16.1074"
+    }
+  ]
+}

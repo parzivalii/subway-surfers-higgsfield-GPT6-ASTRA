@@ -1,0 +1,12 @@
+Switchyard Sprint uses the following free libraries:
+React and React DOM — Meta Platforms, Inc. and affiliates — MIT
+Three.js — three.js authors — MIT
+Vite — Vite contributors — MIT
+TypeScript — Microsoft Corporation — Apache-2.0
+Outfit — The Outfit Project Authors — SIL Open Font License 1.1
+DM Sans — The DM Sans Project Authors — SIL Open Font License 1.1
+
+Full runtime library and font license texts are bundled in licenses/.
+Game music Sunline Shuffle and effects are original synthesized compositions;
+no third-party samples are used. Geometry, UI marks and icons were authored for
+this project. Higgsfield raster references are development sources only.

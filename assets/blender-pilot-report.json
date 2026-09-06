@@ -1,0 +1,41 @@
+[
+  {
+    "id": "pip-default",
+    "input": "E:\\GPT ACCESS\\subway surface\\assets\\authored\\pip-default.glb",
+    "blend": "E:\\GPT ACCESS\\subway surface\\assets\\blender\\pip-default.blend",
+    "final": "E:\\GPT ACCESS\\subway surface\\public\\models\\pip-default.glb",
+    "vertices": 13764,
+    "triangles": 4588,
+    "meshes": 10,
+    "materials": 1,
+    "textures": 0,
+    "actions": [
+      "board",
+      "celebrate",
+      "defeat",
+      "fall",
+      "idle",
+      "jump",
+      "land",
+      "run",
+      "slide",
+      "stumble"
+    ],
+    "bytes": 590696,
+    "status": "Blender imported, validated, saved, and exported; runtime visual inspection separate"
+  },
+  {
+    "id": "station-0",
+    "input": "E:\\GPT ACCESS\\subway surface\\assets\\authored\\station-0.glb",
+    "blend": "E:\\GPT ACCESS\\subway surface\\assets\\blender\\station-0.blend",
+    "final": "E:\\GPT ACCESS\\subway surface\\public\\models\\station-0.glb",
+    "vertices": 30516,
+    "triangles": 10172,
+    "meshes": 1,
+    "materials": 1,
+    "textures": 0,
+    "actions": [],
+    "bytes": 1160744,
+    "status": "Blender imported, validated, saved, and exported; runtime visual inspection separate"
+  }
+]

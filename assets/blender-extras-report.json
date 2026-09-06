@@ -1,0 +1,30 @@
+[
+  {
+    "id": "harbor",
+    "input": "E:\\GPT ACCESS\\subway surface\\assets\\authored\\harbor.glb",
+    "blend": "E:\\GPT ACCESS\\subway surface\\assets\\blender\\harbor.blend",
+    "final": "E:\\GPT ACCESS\\subway surface\\public\\models\\harbor.glb",
+    "vertices": 1536,
+    "triangles": 512,
+    "meshes": 1,
+    "materials": 1,
+    "textures": 0,
+    "actions": [],
+    "bytes": 59468,
+    "status": "Blender imported, validated, saved, and exported; runtime visual inspection separate"
+  },
+  {
+    "id": "tunnel-entrance",
+    "input": "E:\\GPT ACCESS\\subway surface\\assets\\authored\\tunnel-entrance.glb",
+    "blend": "E:\\GPT ACCESS\\subway surface\\assets\\blender\\tunnel-entrance.blend",
+    "final": "E:\\GPT ACCESS\\subway surface\\public\\models\\tunnel-entrance.glb",
+    "vertices": 1908,
+    "triangles": 636,
+    "meshes": 1,
+    "materials": 1,
+    "textures": 0,
+    "actions": [],
+    "bytes": 73684,
+    "status": "Blender imported, validated, saved, and exported; runtime visual inspection separate"
+  }
+]
