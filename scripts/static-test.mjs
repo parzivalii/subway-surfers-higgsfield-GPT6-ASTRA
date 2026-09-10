@@ -10,11 +10,11 @@ page.on('pageerror',e=>report.errors.push(e.message));
 page.on('requestfailed',r=>report.errors.push(`${r.url()}: ${r.failure()?.errorText}`));
 try{
  await page.goto(`${report.url}?inspect=1`);await page.getByText('OFFLINE READY',{exact:true}).waitFor();
- await page.getByRole('button',{name:'LET’S RUN ↵',exact:true}).click();await page.keyboard.press('a');
+ await page.getByRole('button',{name:'LET’S RUN ↵',exact:true}).click();await page.getByRole('button',{name:'Easy difficulty',exact:true}).click();await page.getByRole('button',{name:'Start run · Easy',exact:true}).click();await page.keyboard.press('a');
  assert.equal(await page.evaluate(()=>window.__SWITCHYARD_INSPECT__.read().state.player.targetLane),-1);
  await context.setOffline(true);await page.reload({waitUntil:'domcontentloaded'});
  await page.getByText('OFFLINE READY',{exact:true}).waitFor();
- await page.getByRole('button',{name:'LET’S RUN ↵',exact:true}).click();await page.keyboard.press('d');
+ await page.getByRole('button',{name:'LET’S RUN ↵',exact:true}).click();await page.getByRole('button',{name:'Easy difficulty',exact:true}).click();await page.getByRole('button',{name:'Start run · Easy',exact:true}).click();await page.keyboard.press('d');
  assert.equal(await page.evaluate(()=>window.__SWITCHYARD_INSPECT__.read().state.player.targetLane),1);
  assert.deepEqual(report.errors,[]);report.status='passed';
 }catch(error){report.status='failed';report.failure=String(error.stack);process.exitCode=1;}

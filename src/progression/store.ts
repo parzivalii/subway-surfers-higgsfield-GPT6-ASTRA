@@ -1,4 +1,4 @@
-import type { RunSummary } from '../game/types';
+import type { Difficulty, RunSummary } from '../game/types';
 import { ACHIEVEMENTS, BOARDS, CHARACTERS, CHALLENGES, DEFAULT_BINDINGS, LETTER_WORD, MISSIONS, MULTIPLIER_CAP, OUTFITS, SHOP_ITEMS, UPGRADES, UPGRADE_CAP, UPGRADE_PRICES, type BindingAction, type BoardId, type CharacterId, type UpgradeId } from './catalog';
 
 export const SAVE_KEY = 'switchyard-sprint-save';
@@ -14,7 +14,7 @@ export interface Statistics {
   laneChanges: number; nearMisses: number; roofs: number; boardsUsed: number; powerups: number;
   revives: number; duration: number; stumbles: number; challenges: number; maxDistance: number; maxScore: number;
 }
-export interface HighScore { runId: string; score: number; distance: number; coins: number; character: CharacterId; mode: 'endless' | 'challenge'; date: string; }
+export interface HighScore { runId: string; score: number; distance: number; coins: number; character: CharacterId; mode: 'endless' | 'challenge'; difficulty: Difficulty; date: string; }
 export interface ChallengeRecord { bestScore: number; bestProgress: number; completions: number; }
 export interface RewardBox { id: string; source: string; }
 export interface SaveData {
@@ -95,6 +95,7 @@ export function validateSave(value: unknown): SaveData {
     runId: String(h.runId).slice(0, 128), score: number(h.score), distance: number(h.distance), coins: number(h.coins),
     character: accepted(h.character, CHARACTERS.map(c => c.id), 'pip') as CharacterId,
     mode: (h.mode === 'challenge' ? 'challenge' : 'endless') as HighScore['mode'],
+    difficulty: accepted(h.difficulty, ['easy','normal','hard','impossible'], 'easy') as Difficulty,
     date: typeof h.date === 'string' && /^\d{4}-\d{2}-\d{2}/.test(h.date) ? h.date.slice(0, 10) : '—',
   })).sort((a, b) => b.score - a.score).slice(0, 20);
   const challenges = object(src.challenges);
@@ -294,7 +295,7 @@ export class ProgressionStore {
       next.missions.active = defaultMissions(next.missions.set); next.coins += 75; this.addBox(next, 'Mission set complete');
     }
     report.achievements = this.awardAchievements(next);
-    next.highScores.push({ runId: summary.id, score, distance, coins, character: next.equipped.character, mode: summary.mode === 'challenge' ? 'challenge' : 'endless', date: new Date().toISOString().slice(0, 10) });
+    next.highScores.push({ runId: summary.id, score, distance, coins, character: next.equipped.character, mode: summary.mode === 'challenge' ? 'challenge' : 'endless', difficulty: accepted(summary.difficulty, ['easy','normal','hard','impossible'], 'easy') as Difficulty, date: new Date().toISOString().slice(0, 10) });
     next.highScores.sort((a, b) => b.score - a.score); next.highScores = next.highScores.slice(0, 20);
     report.coins = next.coins - oldCoins; report.tokens = next.tokens - oldTokens; report.boxes = next.boxes.length - oldBoxes;
     this.commit(next); return report;

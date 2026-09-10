@@ -6,6 +6,7 @@ export type Action = 'left' | 'right' | 'jump' | 'slide' | 'board' | 'pause' | '
 export type AnimationState = 'idle' | 'run' | 'jump' | 'fall' | 'land' | 'slide' | 'stumble' | 'defeat' | 'celebrate' | 'board';
 export type ObjectKind = 'coin' | 'train' | 'movingTrain' | 'hurdle' | 'barrier' | 'obstacle' | 'ramp' | Powerup | 'letter' | 'token';
 export type RunMode = 'endless' | 'tutorial' | 'challenge';
+export type Difficulty = 'easy' | 'normal' | 'hard' | 'impossible';
 export type Phase = 'ready' | 'running' | 'paused' | 'countdown' | 'caught' | 'results';
 export interface PlayerState {
   x: number; y: number; z: number; lane: Lane; targetLane: Lane; vy: number;
@@ -28,21 +29,21 @@ export interface GameState {
   revives: number; boardCharges: number; tutorialStep: number; message: string;
   countdown: number; letters: string[]; tokens: number; counters: RunCounters;
   multiplier: number; board: Board; mode: RunMode; preview: boolean;
-  challengeCompleted: boolean; seed: number;
+  challengeCompleted: boolean; seed: number; difficulty: Difficulty;
 }
 export interface RunSummary extends RunCounters {
-  id: string; mode: RunMode | 'preview'; challengeId?: string; distance: number;
+  id: string; mode: RunMode | 'preview'; difficulty?: Difficulty; challengeId?: string; distance: number;
   score: number; coins: number; letters: string[]; tokens: number; reviveCount: number;
   duration: number; districtVisits: number[]; maxSpeed: number; challengeCompleted: boolean; tutorialCompleted?: boolean;
 }
 export interface SimulationConfig {
-  mode?: RunMode; seed?: number; board?: Board;
+  mode?: RunMode; seed?: number; board?: Board; difficulty?: Difficulty;
   upgrades?: Partial<Record<Powerup, number>>; multiplier?: number;
   headstart?: boolean; preview?: boolean; boardCharges?: number; challengeId?: string;
 }
 export type GameEventKind = 'start' | 'pickup' | 'powerup' | 'expiry' | 'board' | 'shield' | 'impact' | 'defeat' | 'revive' | 'results' | 'land' | 'jump' | 'slide' | 'lane' | 'letter' | 'token' | 'district' | 'tutorial' | 'pause' | 'resume' | 'challenge';
 export interface GameEvent { kind: GameEventKind; value?: number; item?: ObjectKind | Board; text?: string }
-export interface RouteNode { z: number; lane: Lane; action: 'none' | 'jump' | 'slide'; elevation: number }
+export interface RouteNode { z: number; lane: Lane; action: 'none' | 'jump' | 'slide'; elevation: number; actionZ?: number }
 export interface GeneratedChunk { index: number; start: number; end: number; objects: WorldObject[]; route: RouteNode[]; district: District; safeLane: Lane }
 export const LANE_WIDTH = 3;
 export const PLAYER_RADIUS = 0.32;

@@ -1,6 +1,7 @@
 import { isPickup, pickupOverlap, roofAt, sweptCollision } from './collision';
 import { CHUNK_LENGTH, districtAt, WorldGenerator } from './generator';
-import { type Action, type AnimationState, type GameEvent, type GameState, type Lane, type Powerup, type RunSummary, type SimulationConfig, MAX_SPEED, MIN_SPEED } from './types';
+import { type Action, type AnimationState, type GameEvent, type GameState, type Lane, type Powerup, type RunSummary, type SimulationConfig, MIN_SPEED } from './types';
+import { DIFFICULTIES } from './difficulty';
 
 const EFFECT_DURATION: Record<Powerup, number> = {magnet: 10, jetpack: 8, shoes: 10, multiplier: 12};
 const GRAVITY = 25;
@@ -30,19 +31,22 @@ export class GameSimulation {
 
   constructor(config: SimulationConfig = {}) {
     this.config = config;
+    const difficulty = config.mode === 'tutorial' ? 'easy' : config.difficulty ?? 'easy';
+    const settings = DIFFICULTIES[difficulty];
     const seed = config.seed ?? (Math.random() * 0x7fffffff | 0);
-    this.generator = new WorldGenerator(seed);
+    this.generator = new WorldGenerator(seed, difficulty);
+    this.maxSpeed = settings.startSpeed;
     this.id = `run-${Date.now().toString(36)}-${++runSerial}-${seed}`;
     const player = { x: 0, y: 0, z: 0, lane: 0 as Lane, targetLane: 0 as Lane, vy: 0, grounded: true, sliding: false, animation: 'idle' as AnimationState, animationTime: 0 };
     this.state = {
       phase: 'ready', player, previousPlayer: {...player}, objects: [],
       effects: {magnet: 0, jetpack: 0, shoes: 0, multiplier: 0, board: 0, invincible: 0},
-      distance: 0, score: 0, coins: 0, speed: MIN_SPEED, elapsed: 0,
+      distance: 0, score: 0, coins: 0, speed: settings.startSpeed, elapsed: 0,
       district: 'station', districtIndex: 0, droneDistance: 9, revives: 0,
       boardCharges: config.boardCharges ?? 3, tutorialStep: 0, message: '', countdown: 0,
       letters: [], tokens: 0, counters: {jumps: 0, slides: 0, laneChanges: 0, nearMisses: 0, roofs: 0, boardsUsed: 0, powerups: 0, stumbles: 0},
       multiplier: Math.max(1, config.multiplier ?? 1), board: config.board ?? 'tide', mode: config.mode ?? 'endless',
-      preview: config.preview ?? false, challengeCompleted: false, seed,
+      preview: config.preview ?? false, challengeCompleted: false, seed, difficulty,
     };
     this.streamWorld();
   }
@@ -100,7 +104,7 @@ export class GameSimulation {
   drainEvents(): GameEvent[] { const events = this.events; this.events = []; return events; }
   summary(): RunSummary {
     const s = this.state;
-    return { id: this.id, mode: s.preview ? 'preview' : s.mode, ...(this.config.challengeId ? {challengeId:this.config.challengeId} : {}),
+    return { id: this.id, mode: s.preview ? 'preview' : s.mode, difficulty:s.difficulty, ...(this.config.challengeId ? {challengeId:this.config.challengeId} : {}),
       distance: Math.floor(s.distance), score: Math.floor(s.score), coins: s.coins, ...s.counters,
       letters: [...s.letters], tokens:s.tokens, reviveCount:s.revives, duration:s.elapsed,
       districtVisits: [...this.visited], maxSpeed:this.maxSpeed, challengeCompleted:s.challengeCompleted, tutorialCompleted:s.mode === 'tutorial' && s.tutorialStep >= 6 && s.distance > 170 };
@@ -115,8 +119,9 @@ export class GameSimulation {
     if (s.phase === 'caught') { this.caughtTime += dt; s.droneDistance = approach(s.droneDistance, .9, dt * 9); p.animationTime += dt; return; }
     if (s.phase !== 'running') return;
     s.elapsed += dt; p.animationTime += dt;
-    s.speed = s.mode === 'tutorial' ? 12 : Math.min(MAX_SPEED, MIN_SPEED + s.elapsed * .075);
-    if (s.effects.jetpack > 0 && this.config.headstart && s.elapsed < 8) s.speed = Math.min(MAX_SPEED, s.speed + 9);
+    const difficulty = DIFFICULTIES[s.difficulty];
+    s.speed = s.mode === 'tutorial' ? 12 : Math.min(difficulty.maxSpeed, difficulty.startSpeed + s.elapsed * difficulty.acceleration);
+    if (s.effects.jetpack > 0 && this.config.headstart && s.elapsed < 8) s.speed = Math.min(difficulty.maxSpeed, s.speed + 9);
     this.maxSpeed = Math.max(this.maxSpeed, s.speed);
     this.animationLock = Math.max(0, this.animationLock - dt); this.stumbleCooldown = Math.max(0, this.stumbleCooldown - dt);
     this.landingProtection = Math.max(0, this.landingProtection - dt);

@@ -25,7 +25,16 @@ page.on('request', request => {
 });
 const read = () => page.evaluate(() => window.__SWITCHYARD_INSPECT__.read());
 const waitState = (predicate, timeout = 15000) => page.waitForFunction(predicate, undefined, { timeout });
-const phase = (name, timeout) => page.waitForFunction(p => window.__SWITCHYARD_INSPECT__.read().state.phase === p, name, { timeout });
+const phase = async (name, timeout) => {
+  if(name==='running'){
+    await page.waitForFunction(()=>window.__SWITCHYARD_INSPECT__.read().state.phase==='running'||Boolean(document.querySelector('.difficulty-modal')),undefined,{timeout});
+    if(await page.getByRole('dialog',{name:'Choose your difficulty'}).isVisible()){
+      await page.getByRole('button',{name:'Easy difficulty',exact:true}).click();
+      await page.getByRole('button',{name:'Start run · Easy',exact:true}).click();
+    }
+  }
+  return page.waitForFunction(p => window.__SWITCHYARD_INSPECT__.read().state.phase === p, name, { timeout });
+};
 const screenshot = async name => { const path = resolve(screenshotDir, `${name}.png`); await page.screenshot({ path, fullPage: true }); report.screenshots.push(path); };
 const click = name => page.getByRole('button', { name, exact: true }).click();
 const back = () => click('Back');
@@ -221,6 +230,7 @@ try {
     report.offlineCache = await page.evaluate(async () => { const keys = await caches.keys(); const items = []; for (const key of keys) { const cache = await caches.open(key); items.push({ key, files: (await cache.keys()).map(r => r.url) }); } return items; });
     assert.ok(report.offlineCache.some(cache => cache.files.length > 5));
     await context.setOffline(true); await page.reload({ waitUntil: 'domcontentloaded' }); await page.waitForFunction(() => Boolean(window.__SWITCHYARD_INSPECT__));
+    await page.locator('.loading').waitFor({state:'hidden'});
     await page.keyboard.press('Enter'); await phase('running'); await page.keyboard.press('a'); assert.equal((await read()).state.player.targetLane, -1);
     await screenshot('offline-gameplay'); await finish(); await home(); await context.setOffline(false);
   });

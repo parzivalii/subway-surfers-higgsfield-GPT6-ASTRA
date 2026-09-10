@@ -1,5 +1,6 @@
-import { type District, type GeneratedChunk, type Lane, type ObjectKind, type RouteNode, type WorldObject, ROOF_HEIGHT } from './types';
+import { type Difficulty, type District, type GeneratedChunk, type Lane, type ObjectKind, type RouteNode, type WorldObject, ROOF_HEIGHT } from './types';
 import { CITY } from './city';
+import { DIFFICULTIES } from './difficulty';
 
 export const CHUNK_LENGTH = 200;
 export const ROW_OFFSETS = [34, 78, 122, 166] as const;
@@ -21,15 +22,18 @@ export function makeObject(id: number, kind: ObjectKind, lane: Lane, z: number, 
     active: true, speed: 0, chunk, ...(kind === 'movingTrain' ? {originZ: z, phaseOffset: (id % 7) * .6} : {}) };
 }
 
-/** Each row leaves one full lane clear. Switching starts after the preceding
- * envelope, with at least 12m of clear travel (0.46s at cap vs 0.28s for two lanes).
+/** Each row certifies a clear lane or a jump/slide route without mandatory powers.
+ * Lane changes begin outside the previous hazard envelope. Hard modes alternate
+ * centre and outer lanes, avoiding a two-lane crossing at their higher speed.
  * Moving trains stay within their certified +/-5m longitudinal envelope.
  * Roof routes are optional. Their entry ramp joins the train without a gap.
  */
 export class WorldGenerator {
   readonly seed: number;
-  constructor(seed: number) { this.seed = seed >>> 0; }
+  constructor(seed: number, readonly difficulty: Difficulty = 'easy') { this.seed = seed >>> 0; }
   generate(index: number, tutorial = false): GeneratedChunk {
+    const difficulty = tutorial ? 'easy' : this.difficulty;
+    const settings = DIFFICULTIES[difficulty];
     const random = seededRandom(this.seed ^ Math.imul(index + 1, 0x9e3779b1));
     const start = index * CHUNK_LENGTH;
     const objects: WorldObject[] = [];
@@ -41,14 +45,20 @@ export class WorldGenerator {
     let lastLane: Lane = 0;
     for (let row = 0; row < ROW_OFFSETS.length; row++) {
       const z = start + ROW_OFFSETS[row]!;
-      const safeLane = Math.floor(random() * 3) - 1 as Lane;
-      route.push({ z: z - 30, lane: safeLane, action: 'none', elevation: 0 });
+      const laneRoll = random();
+      const safeLane: Lane = difficulty === 'hard' || difficulty === 'impossible'
+        ? (index * 4 + row) % 2 === 0 ? laneRoll < .5 ? -1 : 1 : 0
+        : Math.floor(laneRoll * 3) - 1 as Lane;
+      // Do not consume extra RNG values in Easy: existing seeds remain identical.
+      const action = difficulty !== 'easy' && random() < settings.requiredActionChance
+        ? random() < .5 ? 'jump' : 'slide' : 'none';
+      route.push({ z: z - 30, lane: safeLane, action, elevation: 0, ...(action !== 'none' ? {actionZ:z} : {}) });
       // First 24m of a fresh run is intentionally clear. Tutorial obstacles remain avoidable.
       for (const lane of [-1, 0, 1] as Lane[]) {
         if (lane === safeLane) continue;
         const choice = Math.floor(random() * 8);
         const kind: ObjectKind = choice < 2 ? 'train' : choice === 2 ? 'movingTrain' : choice < 5 ? 'hurdle' : choice < 7 ? 'barrier' : 'obstacle';
-        if (kind === 'train' && random() < .66) {
+        if (kind === 'train' && random() < settings.rampChance) {
           // Ramp ends exactly where the train begins. Roof starts at z-7.
           put('ramp', lane, z - 13);
           put('train', lane, z);
@@ -59,9 +69,15 @@ export class WorldGenerator {
         }
       }
       // Coin line begins after the lane-change window, teaching the certified safe path.
-      for (let c = -10; c <= 12; c += 3) put('coin', safeLane, z + c, .85);
+      if (action !== 'none') put(action === 'jump' ? 'hurdle' : 'barrier', safeLane, z);
+      for (let c = -10; c <= 12; c += 3) put('coin', safeLane, z + c,
+        action === 'jump' && Math.abs(c) <= 6 ? 1.3 + Math.cos(c / 6 * Math.PI / 2) : .85);
       const pickups = ['magnet', 'shoes', 'multiplier', 'jetpack'] as const;
-      if ((index * 4 + row) % 3 === 1) put(pickups[(index + row) % 4]!, safeLane, z + 5, 1);
+      if ((index * 4 + row) % settings.powerupEvery === 1) {
+        const pickupIndex = difficulty === 'easy' ? (index + row) % 4
+          : Math.floor((index * 4 + row - 1) / settings.powerupEvery) % 4;
+        put(pickups[pickupIndex]!, safeLane, z + 5, 1);
+      }
       if ((index * 4 + row) % 4 === 2) {
         const letter = put('letter', safeLane, z + 9, 1.05); letter.letter = 'SPRINT'[(index + Math.floor(row / 2)) % 6];
       }

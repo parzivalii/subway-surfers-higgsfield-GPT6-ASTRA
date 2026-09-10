@@ -27,14 +27,14 @@
       "sha256": "e7351257e49400eff05aca30a2007289194a900860d30c30770d8b8732897564"
     },
     {
-      "path": "assets/index-BNqIvI5z.css",
-      "bytes": 26534,
-      "sha256": "df78c821f99f5b32a8c0dc81ba37a26edf7879fc072132bff00bb34afaddfd0b"
+      "path": "assets/index-CKELWHco.js",
+      "bytes": 958713,
+      "sha256": "882627ee07b609da99b301b06b83d074e5af841fef855d201f21ff355f18f603"
     },
     {
-      "path": "assets/index-abjlW_8q.js",
-      "bytes": 954673,
-      "sha256": "72a04d8323851cf9c96ec1fddab2679dfbd28ea8892c336e792958fcf85b671d"
+      "path": "assets/index-D3js5d_G.css",
+      "bytes": 28554,
+      "sha256": "8892af3afbce3bcf820a7094187313c907a010944cc2f58870660e5c30d513d5"
     },
     {
       "path": "assets/outfit-latin-400-normal-BGsTXAXT.woff2",
@@ -79,7 +79,7 @@
     {
       "path": "index.html",
       "bytes": 566,
-      "sha256": "79298eb37087e33ddf0d1686477ae1606530cf6e5e943a81f270f24dc7a8e0b6"
+      "sha256": "2581821fe402252948255c46c00317a0c4e7998aecb6d5d3d1d49510b19b961c"
     },
     {
       "path": "licenses/dm-sans.txt",
@@ -279,9 +279,9 @@
     {
       "path": "sw.js",
       "bytes": 2904,
-      "sha256": "f0f9ff3b0bd8345f8bea6314f4cd720e4a70d1e21cbc30d0fed18f6f055e0865"
+      "sha256": "2ceefae6b77e393c24e77b59960a94ea280cdea46d757b62338c26a5aa2928a0"
     }
   ],
-  "totalBytes": 23135572,
-  "contentHash": "0ad305fa0df8cbf2c29ddbb55219ba2e7bfd666a54acb2b967272cc1d1caf69e"
+  "totalBytes": 23141632,
+  "contentHash": "40b1a72ff78ca8262fbcec0f3dca59158ca73a44ce163747234970e7202cbaf0"
 }

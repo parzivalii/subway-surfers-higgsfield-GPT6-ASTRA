@@ -12,6 +12,17 @@ const run = (patch: Partial<RunSummary> = {}): RunSummary => ({ id: 'run-1', mod
 const funded = (coins = 10000) => { const store = new ProgressionStore(new MemoryStorage()); const save = freshSave(); save.coins = coins; store.importSave(JSON.stringify(save)); return store; };
 
 describe('catalog and local economy', () => {
+  test('difficulty survives settlement, reload and export; old records default to Easy', () => {
+    const storage = new MemoryStorage(), store = new ProgressionStore(storage);
+    store.finishRun(run({difficulty:'impossible'}));
+    expect(new ProgressionStore(storage).getSnapshot().highScores[0].difficulty).toBe('impossible');
+    const exported=JSON.parse(store.exportSave());
+    expect(validateSave(exported).highScores[0].difficulty).toBe('impossible');
+    delete exported.highScores[0].difficulty;
+    expect(validateSave(exported).highScores[0].difficulty).toBe('easy');
+    exported.highScores[0].difficulty='invalid';
+    expect(validateSave(exported).highScores[0].difficulty).toBe('easy');
+  });
   test('complete original roster, outfits, boards, mission and achievement variety', () => {
     expect(CHARACTERS).toHaveLength(5); expect(OUTFITS).toHaveLength(10); expect(BOARDS).toHaveLength(2);
     for (const character of CHARACTERS) expect(OUTFITS.filter(o => o.character === character.id)).toHaveLength(2);

@@ -16,6 +16,7 @@ try{
  await page.unroute('**/models/pip-default.glb');await page.getByRole('button',{name:'Retry loading local models'}).click();
  await page.getByRole('heading',{name:'Bringing the city to life'}).waitFor({state:'hidden'});
  await page.getByRole('button',{name:'LET’S RUN ↵',exact:true}).click();
+ await page.getByRole('button',{name:'Easy difficulty',exact:true}).click();await page.getByRole('button',{name:'Start run · Easy',exact:true}).click();
  await page.waitForFunction(()=>window.__SWITCHYARD_INSPECT__.read().state.phase==='running');report.checks.push('Retry reloads local assets and permits play');
  report.status='passed';
 }catch(error){report.status='failed';report.failure=String(error.stack);process.exitCode=1;}

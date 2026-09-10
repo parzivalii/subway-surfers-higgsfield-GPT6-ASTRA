@@ -45,11 +45,11 @@
     "active": [
       {
         "id": "first-stretch",
-        "progress": 116
+        "progress": 71
       },
       {
         "id": "pocket-change",
-        "progress": 8
+        "progress": 0
       },
       {
         "id": "air-time",
@@ -65,9 +65,9 @@
   ],
   "statistics": {
     "runs": 4,
-    "distance": 116,
-    "score": 196,
-    "coins": 8,
+    "distance": 71,
+    "score": 71,
+    "coins": 0,
     "jumps": 0,
     "slides": 0,
     "laneChanges": 1,
@@ -76,54 +76,58 @@
     "boardsUsed": 1,
     "powerups": 0,
     "revives": 1,
-    "duration": 9,
+    "duration": 5,
     "stumbles": 0,
     "challenges": 0,
-    "maxDistance": 115,
-    "maxScore": 195
+    "maxDistance": 71,
+    "maxScore": 71
   },
   "highScores": [
     {
-      "runId": "run-mtq2y1ta-10-1773730340",
-      "score": 195,
-      "distance": 115,
-      "coins": 8,
+      "runId": "run-mtsuh418-11-946401128",
+      "score": 71,
+      "distance": 71,
+      "coins": 0,
       "character": "pip",
       "mode": "endless",
-      "date": "2026-09-06"
+      "difficulty": "easy",
+      "date": "2026-09-08"
     },
     {
-      "runId": "run-mtq2ymic-10-17329",
-      "score": 1,
-      "distance": 1,
+      "runId": "run-mtsuhdsj-12-615516350",
+      "score": 0,
+      "distance": 0,
+      "coins": 0,
+      "character": "pip",
+      "mode": "endless",
+      "difficulty": "easy",
+      "date": "2026-09-08"
+    },
+    {
+      "runId": "run-mtsuhlnx-11-17329",
+      "score": 0,
+      "distance": 0,
       "coins": 0,
       "character": "nori",
       "mode": "challenge",
-      "date": "2026-09-06"
+      "difficulty": "easy",
+      "date": "2026-09-08"
     },
     {
-      "runId": "run-mtq2yeb7-11-2080653524",
-      "score": 0,
-      "distance": 0,
-      "coins": 0,
-      "character": "pip",
-      "mode": "endless",
-      "date": "2026-09-06"
-    },
-    {
-      "runId": "run-mtq2ymy3-18-552789170",
+      "runId": "run-mtsuhm3w-20-615636325",
       "score": 0,
       "distance": 0,
       "coins": 0,
       "character": "nori",
       "mode": "endless",
-      "date": "2026-09-06"
+      "difficulty": "easy",
+      "date": "2026-09-08"
     }
   ],
   "challenges": {
     "sunline-dash": {
-      "bestScore": 1,
-      "bestProgress": 1,
+      "bestScore": 0,
+      "bestProgress": 0,
       "completions": 0
     }
   },
@@ -139,12 +143,12 @@
   ],
   "rewardSerial": 1,
   "processedRuns": [
-    "run-mtq2xqlo-4-1404159401",
-    "run-mtq2xqqn-7-744241330",
-    "run-mtq2y1ta-10-1773730340",
-    "run-mtq2yeb7-11-2080653524",
-    "run-mtq2ymic-10-17329",
-    "run-mtq2ymy3-18-552789170"
+    "run-mtsugsr5-4-1513617698",
+    "run-mtsugsx9-7-747275530",
+    "run-mtsuh418-11-946401128",
+    "run-mtsuhdsj-12-615516350",
+    "run-mtsuhlnx-11-17329",
+    "run-mtsuhm3w-20-615636325"
   ],
   "tutorialComplete": true,
   "settings": {

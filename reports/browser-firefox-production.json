@@ -2,7 +2,7 @@
   "browser": "firefox",
   "baseURL": "http://127.0.0.1:4173",
   "offlineTest": true,
-  "timestamp": "2026-09-06T17:22:29.114Z",
+  "timestamp": "2026-09-08T15:48:40.053Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -11,62 +11,62 @@
     {
       "name": "Initial local load, genuine renderer, title and responsive layout",
       "status": "passed",
-      "durationMs": 2650
+      "durationMs": 2882
     },
     {
       "name": "Fresh player tutorial early exit does not grant completion",
       "status": "passed",
-      "durationMs": 303
+      "durationMs": 322
     },
     {
       "name": "Interactive tutorial, one-press lanes, airborne movement, down input, board and results",
       "status": "passed",
-      "durationMs": 14402
+      "durationMs": 14372
     },
     {
       "name": "Normal run pause, frozen timers, countdown, crash, paid revive and results/restart",
       "status": "passed",
-      "durationMs": 29540
+      "durationMs": 18249
     },
     {
       "name": "Save import, all five characters and all ten outfits are usable through menus",
       "status": "passed",
-      "durationMs": 4322
+      "durationMs": 4165
     },
     {
       "name": "Both boards, supplies and all twelve duration upgrades transact and persist",
       "status": "passed",
-      "durationMs": 4223
+      "durationMs": 3900
     },
     {
       "name": "Missions, box reward exactly once, achievements, records and local challenge",
       "status": "passed",
-      "durationMs": 931
+      "durationMs": 1205
     },
     {
       "name": "Settings, keyboard rebind, reset defaults, export/import validation, and reset cancel",
       "status": "passed",
-      "durationMs": 1863
+      "durationMs": 1970
     },
     {
       "name": "Isolated preview overlap, repeat pickup, pause/expiry and no normal save changes",
       "status": "passed",
-      "durationMs": 21163
+      "durationMs": 21274
     },
     {
       "name": "Focus loss, graphics context recovery, credits and fullscreen control",
       "status": "passed",
-      "durationMs": 5209
+      "durationMs": 5079
     },
     {
       "name": "Confirmed reset, corrupted storage recovery and unavailable storage session",
       "status": "passed",
-      "durationMs": 3297
+      "durationMs": 3300
     },
     {
       "name": "Complete cache, actual offline reload and keyboard play",
       "status": "passed",
-      "durationMs": 924
+      "durationMs": 1048
     },
     {
       "name": "No uncaught runtime errors or external runtime dependencies",
@@ -111,7 +111,7 @@
     "E:\\GPT ACCESS\\subway surface\\reports\\screenshots\\firefox-production\\offline-gameplay.png"
   ],
   "version": "155.0",
-  "initialLoadMs": 1932,
+  "initialLoadMs": 2087,
   "graphics": {
     "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 980 Direct3D11 vs_5_0 ps_5_0), or similar",
     "vendor": "Google Inc. (NVIDIA)",
@@ -121,14 +121,14 @@
   "fullscreenEntered": true,
   "offlineCache": [
     {
-      "key": "switchyard-1fcd096d175c",
+      "key": "switchyard-53f8db7da74f",
       "files": [
         "http://127.0.0.1:4173/assets/dm-sans-latin-400-normal-BwCSEQnW.woff",
         "http://127.0.0.1:4173/assets/dm-sans-latin-400-normal-CW0RaeGs.woff2",
         "http://127.0.0.1:4173/assets/dm-sans-latin-600-normal-Aqo67rzb.woff2",
         "http://127.0.0.1:4173/assets/dm-sans-latin-600-normal-BmdmIIQ2.woff",
-        "http://127.0.0.1:4173/assets/index-BNqIvI5z.css",
-        "http://127.0.0.1:4173/assets/index-Bq687XPE.js",
+        "http://127.0.0.1:4173/assets/index-CKELWHco.js",
+        "http://127.0.0.1:4173/assets/index-D3js5d_G.css",
         "http://127.0.0.1:4173/assets/outfit-latin-400-normal-BGsTXAXT.woff2",
         "http://127.0.0.1:4173/assets/outfit-latin-400-normal-DMwTpYkH.woff",
         "http://127.0.0.1:4173/assets/outfit-latin-600-normal-B7SfZ07L.woff2",

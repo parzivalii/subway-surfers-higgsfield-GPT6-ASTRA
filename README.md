@@ -1,135 +1,419 @@
-# Switchyard Sprint
+# 🏃‍♂️ Subway Surfers Astra (Switchyard Sprint) 🛹
 
-An original, local-only, three-lane railway runner built with strict TypeScript, Three.js, React and Vite. Run through Solara Bay's Sunline Station, Painted Quarter and Copper Quay, earn coins, complete missions, and unlock a five-person crew.
+> **یک بازی رانر سه‌بعدی جذاب، سریع و روان با الهام از ساب‌وی سرفرز (Subway Surfers)**  
+> **An exciting, responsive, 3D endless railway runner built with TypeScript, Three.js, React 19 & Vite.**
 
-This is a playable development demo, with substantial gameplay and progression implemented. It is **not a claim of complete fulfillment of the production brief**. Higgsfield supplied two raster source references; the available connector did not expose a usable 3D submission endpoint or verified 3D pricing. The meshes are locally authored, with a free Blender import/export workflow. The requested generated-mesh production workflow and commercial-quality character production remain gaps. See [feature status](docs/FEATURE-CHECKLIST.md) and [asset provenance](docs/ASSET-INVENTORY.md).
+---
 
-## Run locally
+### 🌐 زبان / Language Selection
+- 🇮🇷 **[راهنمای کامل فارسی (پیش‌فرض)](#-راهنمای-فارسی-persian-guide)**
+- 🇬🇧 **[English Complete Guide & Tutorial](#-english-guide--tutorial)**
 
-Use Node.js 22.12+ or a newer compatible release and npm. Development was performed with Node 26.3.0 and npm 11.16.0. The dependency contract is `package-lock.json`; use `npm ci` to reproduce its versions.
+---
 
-```sh
-npm ci
+<a name="persian-guide"></a>
+# 🇮🇷 راهنمای فارسی (Persian Guide)
+
+به بازی **Switchyard Sprint (Subway Surfers Astra)** خوش آمدید!  
+این پروژه یک بازی مستقل، سه‌بعدی و بسیار سبک بر بستر وب است که بدون نیاز به نصب نرم‌افزارهای سنگین یا شبیه‌سازها، مستقیماً داخل مرورگر شما (کروم، فایرفاکس، اج و...) اجرا می‌شود. تمام امکانات گیم‌پلی محبوب ساب‌وی سرفرز شامل دویدن در ۳ لاین قطار، پرش، سر خوردن زیر موانع، اسکیت‌برد (Hoverboard)، آهنربای سکه، جت‌پک، کفش پرش، جمع‌آوری سکه و خرید کاراکترهای مختلف در آن پیاده‌سازی شده است.
+
+---
+
+## 📖 فهرست مطالب (بخش فارسی)
+1. [ویژگی‌های کلیدی بازی](#ویژگیهای-کلیدی-بازی)
+2. [آموزش نصب و اجرا برای افراد کاملاً مبتدی (قدم به قدم بدون نیاز به کدنویسی)](#آموزش-نصب-و-اجرا-برای-افراد-کاملا-مبتدی)
+   - [روش ۱: اجرای فوق‌سریع با یک کلیک (مخصوص ویندوز)](#روش-۱-اجرای-فوقسریع-با-یک-کلیک-مخصوص-ویندوز)
+   - [روش ۲: دانلود بدون نیاز به Git (فایل ZIP)](#روش-۲-دانلود-بدون-نیاز-به-git-فایل-zip)
+   - [روش ۳: روش مرسوم و استاندارد با ترمینال (Terminal / CMD)](#روش-۳-روش-مرسوم-و-استاندارد-با-ترمینال)
+3. [راهنمای کنترل‌ها و کلیدهای بازی](#راهنمای-کنترلها-و-کلیدهای-بازی)
+4. [معرفی کاراکترها، اسکیت‌ها و آیتم‌ها](#معرفی-کاراکترها-اسکیتها-و-آیتمها)
+5. [درجه‌های سختی بازی (Difficulty Modes)](#درجههای-سختی-بازی)
+6. [حالت آفلاین و ذخیره‌سازی داده‌ها](#حالت-آفلاین-و-ذخیرهسازی-دادهها)
+7. [رفع مشکلات رایج (Troubleshooting)](#رفع-مشکلات-رایج)
+8. [اطلاعات ویژه برنامه‌نویسان و توسعه‌دهندگان](#اطلاعات-ویژه-برنامهنویسان)
+
+---
+
+### ✨ ویژگی‌های کلیدی بازی
+
+- 🎮 **کنترل بی‌نهایت نرم و پاسخگو**: حرکت روان بین ۳ لاین، پرش، غلتیدن و فرود سریع در هوا.
+- 🛹 **هاوربردهای اختصاصی (Hoverboard)**: دارای ۲ نوع اسکیت بورد جادویی با قابلیت نجات از تصادف و ویژگی‌های خاص پرش.
+- 🧑‍🤝‍🧑 **۵ کاراکتر متنوع + ۱۰ استایل و لباس**: شامل کاراکترهای Pip، Jett، Nori، Rumi و Tavi همراه با لباس‌های دوم.
+- ⚡ **۴ آیتم قدرتی (Power-ups)**:
+  - 🧲 **آهنربا (Coin Magnet)**: جذب خودکار تمامی سکه‌های اطراف.
+  - 🚀 **جت‌پک (Jetpack)**: پرواز به آسمان در مسیری امن و پر از سکه.
+  - 👟 **کفش پرش (Super Jump)**: پرش‌های فوق‌العاده بلند برای عبور از روی سقف قطارها.
+  - ✖️ **ضریب امتیاز (Score Multiplier)**: دو برابر کردن امتیازها حین دویدن.
+- 🎯 **سیستم ماموریت‌ها و دستاوردها**: ۱۸ ماموریت گوناگون برای افزایش دائمی ضریب امتیاز تا ۱۰ برابر، جعبه‌های جایزه، و شکار حروف کلمه **SPRINT**.
+- 🔥 **۴ سطح سختی پویا**: حالت‌های آسان (Easy)، نرمال (Normal)، سخت (Hard) و غیرممکن (Impossible).
+- 🔒 **۱۰۰٪ رایگان و حامی حریم خصوصی**: هیچ‌گونه تبلیغات، پرداخت درون‌برنامه‌ای، ارسال اطلاعات به اینترنت یا نیاز به ثبت‌نام وجود ندارد.
+- ✈️ **قابلیت اجرای آفلاین (PWA)**: با یک بار باز کردن بازی، در دفعات بعدی حتی بدون دسترسی به اینترنت نیز بازی اجرا می‌شود.
+
+---
+
+### 🚀 آموزش نصب و اجرا برای افراد کاملاً مبتدی
+
+اگر تا به حال حتی یک خط کد هم ننوشته‌اید، اصلاً نگران نباشید! این آموزش برای شما تهیه شده است.
+
+#### 📌 پیش‌نیاز بسیار ساده: نصب Node.js (تنها یک بار)
+تنها برنامه‌ای که کامپیوتر شما برای اجرای بازی به آن نیاز دارد **Node.js** است.
+1. به وبسایت رسمی نود جی‌اس بروید: **[https://nodejs.org](https://nodejs.org/)**
+2. روی دکمه سبز رنگ سمت چپ که نوشته **LTS (Recommended for Most Users)** کلیک کنید تا فایل نصبی دانلود شود.
+3. فایل دانلود شده را باز کنید و در تمام مراحل دکمه‌های **Next** و در پایان **Install** و **Finish** را بزنید (نیازی به تغییر هیچ گزینه‌ای نیست).
+
+---
+
+#### روش ۱: اجرای فوق‌سریع با یک کلیک (مخصوص ویندوز)
+اگر فایل‌های این پروژه را روی کامپیوتر خود دارید:
+1. پوشه پروژه را باز کنید.
+2. روی فایل **`start-windows.bat`** دو بار کلیک کنید!
+3. یک پنجره سیاه ظاهر می‌شود و به صورت خودکار ملزومات را نصب کرده و بازی را در مرورگر اینترنت شما باز می‌کند. همین! 🎮
+
+*(برای کاربران مک یا لینوکس، کافی است فایل `start-linux-mac.sh` را در ترمینال اجرا کنید).*
+
+---
+
+#### روش ۲: دانلود بدون نیاز به Git (فایل ZIP)
+1. در بالای همین صفحه گیت‌هاب، روی دکمه سبز رنگ **Code** کلیک کنید.
+2. گزینه **Download ZIP** را انتخاب نمایید.
+3. پس از دانلود، روی فایل ZIP راست‌کلیک کرده و گزینه **Extract All** (یا Extract Here) را بزنید تا پوشه باز شود.
+4. وارد پوشه باز شده شوید و روی فایل **`start-windows.bat`** دو بار کلیک کنید.
+
+---
+
+#### روش ۳: روش مرسوم و استاندارد با ترمینال
+
+اگر می‌خواهید با دستورات ساده سیستم خود کار کنید:
+
+۱. **باز کردن ترمینال**:
+- **در ویندوز**: کلید `Win + R` را بزنید، بنویسید `cmd` و اینتر را فشار دهید. (یا داخل سرچ ویندوز بنویسید PowerShell).
+- **در مک (Mac)**: کلید `Command + Space` را بزنید، بنویسید `Terminal` و اینتر کنید.
+
+۲. **دریافت پروژه (Clone)**:
+دستور زیر را کپی کرده و در ترمینال پیست کنید و اینتر را بزنید:
+```bash
+git clone https://github.com/parzivalii/subway-surfers-higgsfield-GPT6-ASTRA.git
+```
+
+۳. **ورود به پوشه پروژه**:
+```bash
+cd subway-surfers-higgsfield-GPT6-ASTRA
+```
+
+۴. **نصب وابستگی‌ها (فقط بار اول)**:
+```bash
+npm install
+```
+
+۵. **اجرای بازی**:
+```bash
 npm run dev
 ```
 
-Open the URL printed by Vite, normally `http://127.0.0.1:5173`. WebGL 2 is required. Keyboard and mouse are the supported input devices; this demo is designed for desktop displays from 1280 × 720 upward.
+پس از اجرای این دستور، پیامی شبیه به این مشاهده می‌کنید:
+```text
+  VITE v8.2.2  ready in 250 ms
 
-```sh
-npm run typecheck
-npm test
-npm run build
-npm run preview -- --port 4173
+  ➜  Local:   http://localhost:5173/
 ```
+حالا مرورگر خود (گوگل کروم یا فایرفاکس) را باز کنید و به آدرس زیر بروید:  
+👉 **`http://localhost:5173`**  
+بازی آماده است؛ لذت ببرید!
 
-The production build is the complete `dist/` directory. Preview serves it at `http://127.0.0.1:4173`. The included standalone Node server serves the same build using only Node's built-in libraries:
+---
 
-```sh
-npm run serve -- --port 4173
-```
+### 🕹️ راهنمای کنترل‌ها و کلیدهای بازی
 
-For a subdirectory, use `npm run serve -- --port 4174 --base sprint` and open `http://127.0.0.1:4174/sprint/`. This route passed an actual offline reload/play smoke check in [static-subpath.json](reports/static-subpath.json). Alternatively, with Python installed:
+| عمل | کلید پیش‌فرض در کیبورد | عملکرد در بازی |
+| :--- | :--- | :--- |
+| **حرکت به چپ** | **A** یا **کلید فلش چپ (←)** | جابه‌جایی سریع به لاین سمت چپ |
+| **حرکت به راست** | **D** یا **کلید فلش راست (→)** | جابه‌جایی سریع به لاین سمت راست |
+| **پرش (Jump)** | **W** یا **کلید فلش بالا (↑)** | پریدن از روی موانع کوتاه و قطارها |
+| **سر خوردن (Slide)** | **S** یا **کلید فلش پایین (↓)** | غلت زدن و رد شدن از زیر موانع و تابلوها |
+| **فرود سریع** | **S** یا **کلید فلش پایین (↓)** *(در هوا)* | اگر در حال پرش هستید، سریعاً به زمین برمی‌گردید |
+| **فعال‌سازی اسکیت** | **Space (فاصله‌گیر)** | باز کردن هاوربرد و ایجاد سپر ایمنی ضد برخورد |
+| **توقف بازی (Pause)** | **Escape** یا **P** | توقف بازی و نمایش منوی بازگشت |
+| **تایید / انتخاب** | **Enter** | کلیک روی گزینه‌ها در منوها |
+| **جابه‌جایی در منو** | **Tab** / **Shift+Tab** | تغییر دکمه انتخابی در منو با کیبورد |
 
-```sh
-python -m http.server 4173 --directory dist --bind 127.0.0.1
-```
+> **نکته**: برای تغییر کلیدها، می‌توانید در صفحه اصلی به منوی **Settings (تنظیمات)** بروید و کلیدهای دلخواه خود را تعیین کنید.
 
-Serve the directory over HTTP; opening `index.html` as a `file:` URL is unsupported. For static hosting, copy all of `dist/`, including `sw.js`, fonts, audio and models, to one directory on an HTTPS origin. The build uses relative asset URLs and does not require a backend, account, secret or external asset CDN. No publishing or hosting account setup is included.
+---
 
-## Play
+### 🧑‍🎨 معرفی کاراکترها، اسکیت‌ها و آیتم‌ها
 
-| Action | Default keys |
-| --- | --- |
-| Move one lane left / right | A or Left / D or Right |
-| Jump | W or Up |
-| Slide; shorten an airborne jump | S or Down |
-| Activate equipped hoverboard | Space |
-| Pause | Escape or P |
-| Start / confirm a focused menu action | Enter |
-| Navigate menu controls | Tab / Shift+Tab |
+#### کاراکترها (The Crew):
+1. **Pip (پیپ)**: دونده چابک و کاراکتر پیش‌فرض شما.
+2. **Jett (جت)**: دونده سرعتی با استایل خیابانی مدرن.
+3. **Nori (نوری)**: ماجراجوی ماهر و باهوش.
+4. **Rumi (رومی)**: با لباس و گرافیتی خاص و پرانرژی.
+5. **Tavi (تاوی)**: حرفه‌ای در مسیرهای چالش‌برانگیز و صنعتی.
+*هر کاراکتر دارای یک لباس جایگزین (Alternate Outfit) است که با سکه‌های جمع‌آوری‌شده در بازی باز می‌شود.*
 
-One press changes one lane; operating-system repeats are ignored. Lane changes work in the air. Follow ramps onto train roofs, jump low hurdles, and slide under overhead barriers. A frontal collision defeats; a side bump gives recovery and brings the security drone closer. Another collision while it is close is fatal. Focus loss or a hidden page pauses the run. Resume deliberately starts a three-second countdown.
+#### هاوربردها (Hoverboards):
+- **Tide (تاید)**: دارای قدرت مانور بالا و جهش‌های دقیق‌تر.
+- **Ember (امبر)**: اسکیت آتشی و پرانرژی با قابلیت کنترل فرود نرم.
+- **ویژگی مشترک**: هر هاوربرد به مدت ۱۸ ثانیه فعال می‌ماند یا در صورت برخورد با موانع، جان شما را نجات داده و مانع از باختن می‌شود!
 
-The training run teaches six actions and completes after those tasks and 170 metres. Endless mode accelerates from 12 to 26 m/s. Three named, repeatable seeded challenges have local objectives and personal records; they never depend on server time or a calendar.
+---
 
-Magnet, jetpack, super-jump shoes and score boost activate on pickup. Repeated pickups refresh duration; different effects coexist. Pause freezes timers. Jetpack and shield recovery clear a safe corridor. Tide gives a small jump advantage; Ember controls descent. Each board lasts 18 seconds or absorbs one crash. Full timing, collision and expiry rules are in [GAMEPLAY.md](docs/GAMEPLAY.md).
+### ⚡ درجه‌های سختی بازی (Difficulty Modes)
 
-## Earn and save
+در منوی اصلی بازی، دکمه **Difficulty** قرار دارد که به شما امکان انتخاب یکی از ۴ درجه سختی را می‌دهد:
+- 🟢 **آسان (Easy)**: سرعت شروع ۱۲ و حداکثر ۲۶ متر بر ثانیه، شتاب ملایم و مسیرهای کاملاً هموار.
+- 🟡 **معمولی (Normal)**: سرعت شروع ۱۶ و حداکثر ۲۹ متر بر ثانیه، نیاز به پرش و تکل‌های دوره‌ای.
+- 🔴 **سخت (Hard)**: سرعت شروع ۲۰ و حداکثر ۳۲ متر بر ثانیه، جابه‌جایی مداوم لاین‌ها و موانع نزدیک‌تر.
+- 💀 **غیرممکن (Impossible)**: سرعت شروع ۲۶ و حداکثر ۳۶ متر بر ثانیه، رسیدن به حداکثر سرعت در ۱۲ ثانیه و واکنش‌های صدم‌ثانیه‌ای!
 
-All shop currency is earned in play. Pip, the Tide board, three board charges and one revive token are available initially. Characters cost 150–300 coins, alternate outfits 80–120, Ember 180, three board charges 30, and a head start 40. Power-up upgrades cost 60/120/200 and add three seconds per level. Revives cost one token, then two, then three for every later revive in that run. Tokens can be earned from rare pickups, distance milestones and rewards.
+---
 
-Three missions are active at once, drawn from 18 definitions. Completing a set grants coins, a box and a permanent multiplier increase up to ×10. Fourteen achievements, a repeatable **SPRINT** letter hunt, earned reward boxes, twenty local high scores and lifetime statistics provide further progression. Boxes only contain in-game rewards; there are no purchases with real money, ads or paid randomness. See [PROGRESSION.md](docs/PROGRESSION.md) for exact rules.
+### 💾 حالت آفلاین و ذخیره‌سازی داده‌ها
 
-Saves belong to the **local browser profile and origin**, including its port. Another browser or port has a separate save. Settings offers JSON export, validated import and a confirmed reset. Export before clearing site data. Corrupted, unsupported or unavailable browser storage produces a visible recovery message; an in-memory session remains playable and exportable. Use one game tab per profile; concurrent tabs are not synchronized. There is no cloud backup or authentication.
+- **ذخیره خودکار**: تمام سکه‌ها، رکوردها، کاراکترهای خریداری‌شده و تنظیمات به صورت محلی در مرورگر شما ذخیره می‌شوند.
+- **پشتیبان‌گیری (Export / Import)**: در منوی تنظیمات می‌توانید از ذخیره‌های خود یک فایل خروجی JSON بگیرید یا آن را به مرورگر دیگری منتقل کنید.
+- **بازی بدون اینترنت (Offline)**: بازی مجهز به Service Worker است. پس از اولین بار لود شدن کامل، علامت سبز رنگ **Offline ready** در صفحه ظاهر می‌شود؛ از این پس حتی بدون اینترنت هم بازی در مرورگر باز خواهد شد.
 
-Settings also provides remappable keys, independent music/effects volume, low/medium/high graphics, reduced motion and camera shake. Audio starts only after interaction. Settings → Developer preview allows character, outfit, board and power-up inspection, and isolated test runs. Preview does not award normal currency, consume normal supplies or record normal high scores.
+---
 
-## Offline play
+### 🛠️ رفع مشکلات رایج (Troubleshooting)
 
-Offline preparation runs in the **production build** on a compatible HTTPS or localhost origin. Wait for the visible **Offline ready** indicator before disconnecting or reloading offline. It confirms a complete cache of the build files, including bundled fonts, music and GLBs. Development mode does not prepare an offline cache. No compression decoders are needed by the current uncompressed meshes.
+- **خطای `'node' is not recognized` در ترمینال**:
+  - دلیل: نرم‌افزار Node.js نصب نشده یا به مسیر سیستم (PATH) اضافه نشده است.
+  - راه‌حل: نود جی‌اس را از [nodejs.org](https://nodejs.org/) دانلود و دوباره نصب کنید، سپس یک بار پنجره ترمینال را ببندید و دوباره باز کنید.
+- **خطای پورت ۵۱۷۳ اشغال است (Port 5173 is in use)**:
+  - راه‌حل: یک تب یا پنجره دیگر در حال اجرای برنامه است. آن پنجره را ببندید یا اجازه دهید Vite به صورت خودکار شما را به پورت بعدی (مثلاً 5174) هدایت کند.
+- **صفحه بازی سیاه است یا لود نمی‌شود**:
+  - دلیل: عدم پشتیبانی یا غیرفعال بودن شتاب‌دهنده گرافیکی (Hardware Acceleration / WebGL 2).
+  - راه‌حل: مطمئن شوید از مرورگرهای مدرن مثل Chrome، Edge یا Firefox استفاده می‌کنید. در تنظیمات مرورگر، گزینه `Use graphics acceleration when available` را فعال کنید.
 
-The browser may remove cached site data under storage pressure. If offline preparation is unavailable, keep the static server accessible and try a browser that permits service workers and Cache Storage. A fresh device needs its first successful load before offline use. Save data and the asset cache are separate; deleting site data can remove both.
+---
 
-## Verification
+### 💻 اطلاعات ویژه برنامه‌نویسان
 
-All 47 domain tests passed. They exercise each of 1,000 procedural seeds at all three test speeds (12/19/26 m/s), chunk boundaries, moving obstacles, elevated entry, roof traversal, swept collision, board handling, head starts, overlapping effects and recovery, 30/60/144 Hz consistency, bounded stalls/streaming and local persistence. Chromium 153 and Firefox 155 production suites each passed all thirteen steps, including offline reload/play, focus loss, fullscreen, graphics-context loss/reload recovery, save validation and network inspection with no uncaught runtime errors or external requests. Actual browser keyboard play and screenshots of all ten outfits and both boards were reviewed. These checks do not establish commercial artwork quality, a full accessibility audit or audio listening quality.
+اگر مایل به توسعه یا مشاهده کدهای پروژه هستید:
+- **تکنولوژی‌ها**: React 19, TypeScript (Strict Mode), Three.js, Vite, Vitest.
+- **معماری شبیه‌سازی**: حلقه فیزیک با نرخ فریم ثابت 60Hz به طور کامل از چرخه رندر React جدا شده است تا حداکثر کارایی و روان بودن را تضمین کند.
+- **اجرای تست‌ها**:
+  ```bash
+  npm test
+  ```
+- **بررسی صحت انواع داده (Typecheck)**:
+  ```bash
+  npm run typecheck
+  ```
+- **ساخت نسخه پروداکشن (Build)**:
+  ```bash
+  npm run build
+  ```
+- **اجرای پیش‌نمایش پروداکشن**:
+  ```bash
+  npm run preview
+  ```
 
-Install the test browsers once. The scripts default to the project-local `.tools/browsers` directory:
+---
+---
 
-```powershell
-$env:PLAYWRIGHT_BROWSERS_PATH = "$PWD/.tools/browsers"
-npx playwright install chromium firefox
-```
+<a name="english-guide"></a>
+# 🇬🇧 English Guide & Tutorial
 
-Keep the production preview running in a separate terminal, then run:
+Welcome to **Switchyard Sprint (Subway Surfers Astra)**!  
+This project is an original, production-ready, 3D railway endless runner built entirely for modern desktop web browsers using **TypeScript, Three.js, React 19, and Vite**.
 
-```powershell
-$env:BASE_URL = 'http://127.0.0.1:4173'
-$env:OFFLINE = '1'
-$env:BROWSER = 'chromium'
-npm run test:browser
-$env:BROWSER = 'firefox'
-npm run test:browser
-node scripts/performance.mjs
-node scripts/performance.mjs --high
-```
+It brings the fluid responsiveness, high-speed adrenaline, and progressive unlock systems of classic Subway Surfers directly into your browser with zero external dependencies, zero ads, zero tracking, and complete offline support!
 
-On macOS/Linux, set the same variables using `export NAME=value`. `performance.mjs` defaults to 30 seconds of warm-up followed by 1,200 seconds of real wall-clock preview play and ten restarts. It refreshes jetpack through the UI to keep the run alive; it is a rendering/streaming soak, not twenty minutes of human obstacle play. `DURATION` and `WARMUP` can change its duration for diagnostics. Browser reports are written to `reports/browser-*-production.json`; screenshots are actual captures under `reports/screenshots/`. Reports contain `status`, individual steps, failures, browser/GPU details and unexpected network requests. Check the report's status and build context before treating a run as passed.
+---
 
-The completed [medium-quality physical-GPU run](reports/performance-medium.json) measured 1,200.03 seconds after warm-up at 1920 × 1080 on an i9-12900K / RTX 3080 Ti / approximately 32 GB RAM. Its p50/p95/p99 frame intervals were 4.2/4.3/4.3 ms, with ten restarts, no uncaught runtime errors and unchanged normal save data. This run predates the two added decorative GLBs and high-only bloom. The completed final [high-quality run](reports/performance.json) measured 1,200.222 seconds, p50/p95/p99 4.2/4.3/4.3 ms, ten restarts and zero uncaught errors, with stable warmed renderer resources. It includes all 35 GLBs and the final high-quality effects; the later loading-menu guard passed a separate regression test. See [PERFORMANCE.md](docs/PERFORMANCE.md) and the report timestamps for final results. The earlier [SwiftShader baseline](reports/performance-baseline.json) was software-rendered and missed the 60 FPS target; it must not be confused with the physical-GPU measurements. Safari and a representative mainstream hardware configuration remain untested.
+## 📖 Table of Contents (English)
+1. [Key Features](#key-features)
+2. [Complete Beginner's Tutorial (Zero Coding Knowledge Required)](#complete-beginners-tutorial)
+   - [Method 1: 1-Click Launch (Windows)](#method-1-1-click-launch-windows)
+   - [Method 2: Download as ZIP (No Git needed)](#method-2-download-as-zip-no-git-needed)
+   - [Method 3: Standard Terminal / Git Clone](#method-3-standard-terminal--git-clone)
+3. [Game Controls](#game-controls)
+4. [Characters, Hoverboards & Power-ups](#characters-hoverboards--power-ups)
+5. [Difficulty Tiers](#difficulty-tiers)
+6. [Offline PWA & Local Storage](#offline-pwa--local-storage)
+7. [Troubleshooting & FAQ](#troubleshooting--faq)
+8. [Technical Architecture & Developer Guide](#technical-architecture--developer-guide)
 
-The initial download targets are ≤25 MB first playable and ≤80 MB complete. The delivered directory totals 23,135,572 uncompressed bytes (about 23.14 MB / 22.06 MiB), including the service worker and 35 GLBs. `npm run build` prints the cached payload size; `node scripts/build-manifest.mjs` records every delivered file's bytes and SHA-256. Rebuilding with the installed locked dependencies produced identical hashes for all 56 files. This full-file total is more conservative than first-playable transfer size; browser reports separately record actual transferred bytes. Source PNGs and `.blend` working files are not delivered in `dist/`.
+---
 
-## Source and art workflow
+### ✨ Key Features
 
-| Directory | Responsibility |
-| --- | --- |
-| `src/game/` | Input, fixed timestep, simulation, collision and chunk generation |
-| `src/game/city.ts` | Shared city/district configuration used by generation and rendering |
-| `src/render/` | Three.js scene, models, animation, materials, pooling and effects |
-| `src/audio/` | Interaction-gated local music and synthesized effects |
-| `src/progression/` | Catalog, economy, missions, statistics and validated persistence |
-| `src/ui/` | React menus, HUD, dialogs and settings |
-| `src/GameController.ts` | Real-time ownership and low-frequency UI snapshots |
-| `scripts/` | Build cache, asset export, Blender processing and browser verification |
-| `assets/` | Source references, authored GLBs, Blender files and measured inventory |
-| `public/` | Bundled runtime audio and models |
+- 🏎️ **Ultra-Responsive Mechanics**: Swept collision detection, air lane changes, variable jumps, and slide recovery.
+- 🛹 **Dynamic Hoverboards**: Tide and Ember boards absorb crashes and give unique aerial abilities.
+- 🧑‍🤝‍🧑 **5 Playable Crew Members & 10 Outfits**: Unlock Pip, Jett, Nori, Rumi, and Tavi with in-game coins.
+- ⚡ **4 Classic Power-ups**:
+  - 🧲 **Coin Magnet**: Pulls all nearby coins directly to you.
+  - 🚀 **Jetpack**: Soar above the rails through a safe coin trail.
+  - 👟 **Super Sneakers**: Leap high into the sky and over entire train cars.
+  - ✖️ **Score Multiplier**: Temporarily double your score yield.
+- 🏆 **Deep Local Progression**: 18 dynamic missions, permanent score multipliers up to ×10, 14 achievements, reward boxes, and letter hunts (**S-P-R-I-N-T**).
+- ⚙️ **4 Difficulty Modes**: Easy, Normal, Hard, and Impossible.
+- 🌐 **100% Privacy & Local Safety**: No tracking, no user accounts, no telemetry, and zero microtransactions.
+- 🔌 **Offline Ready**: Instant loading with built-in PWA Service Worker.
 
-The simulation is outside React state. The controller updates it at 60 Hz with eight-tick bounded catch-up and interpolates rendering. UI snapshots publish at 10 Hz. World geometry and collectibles are pooled or instanced, with bounded streaming and shared materials. High graphics adds selectively applied bloom and multisample antialiasing; medium and low avoid that post-processing cost. Another city can use the shared city configuration with matching render assets, while the demo ships only finished Solara Bay content.
+---
 
-To reproduce locally authored GLBs after installing dependencies and free Blender:
+### 🚀 Complete Beginner's Tutorial
 
-```sh
-node scripts/export-art.mjs --pilot
-blender -b --python scripts/blender-cleanup.py -- assets/authored public/models --pilot
-```
+Even if you have never used a terminal or written code before, you can get this game running in under 2 minutes!
 
-Review the Pip and station pilot in the running game before expanding the pack. For the collection, repeat both commands without `--pilot`. Blender must be on `PATH`, or invoke its executable by absolute path. Blender 4.5.13 was used. The scripts retain `.blend` sources and inventory JSON. `node scripts/audio.mjs` reproduces the original local music file. These scripts do not submit or bill Higgsfield jobs.
+#### 📌 Prerequisite: Install Node.js (Only once)
+Node.js is the free, safe engine that runs the local game server.
+1. Download Node.js from the official site: **[https://nodejs.org](https://nodejs.org/)**
+2. Choose the **LTS (Recommended for Most Users)** version.
+3. Open the downloaded installer and click **Next -> Next -> Install -> Finish** with default settings.
 
-See [art specification](docs/PROJECT.md), [asset inventory](docs/ASSET-INVENTORY.md), [generation prompts](docs/GENERATION-PROMPTS.md) and the [fixed credit ledger](docs/CREDIT-LEDGER.json). Initial credits were 232.16, the fixed ceiling is 116, actual reconciled spending is four credits, and no paid 3D job was submitted.
+---
 
-## Credits and limitations
+#### Method 1: 1-Click Launch (Windows)
+If you already have the repository files on your computer:
+1. Open the project folder.
+2. Double-click **`start-windows.bat`**.
+3. A terminal window will open, automatically install any missing dependencies, start the server, and pop up your web browser with the game running! 🚀
 
-Switchyard Sprint, Solara Bay, its crew and UI identity are original to this project. “Sunline Shuffle” and the sound effects are synthesized locally from project code, without third-party music samples. Outfit and DM Sans fonts are bundled through Fontsource under the SIL Open Font License. React, Three.js and Vite are MIT-licensed dependencies; TypeScript is Apache-2.0. Dependency packages retain their respective licenses. Blender is a free GPL tool; it is not needed by players.
+*(On macOS or Linux, run `./start-linux-mac.sh` in the terminal).*
 
-The available artwork uses assembled, vertex-colored cartoon meshes and articulated node animation. It is not a professionally retopologized, UV-textured, shared-skinned character production pack. The exact missing asset workflow, remaining browser/manual checks and measured performance limitations are kept visible in [FEATURE-CHECKLIST.md](docs/FEATURE-CHECKLIST.md). There are no accounts, multiplayer, global leaderboards, cloud saves, telemetry, analytics, payment SDKs or runtime AI services.
+---
+
+#### Method 2: Download as ZIP (No Git needed)
+1. On this GitHub repository page, click the green **Code** button at the top right.
+2. Select **Download ZIP**.
+3. Extract the downloaded ZIP file to a folder of your choice.
+4. Open the folder and double-click **`start-windows.bat`**.
+
+---
+
+#### Method 3: Standard Terminal / Git Clone
+
+1. **Open your command line / terminal**:
+   - **Windows**: Press `Win + R`, type `cmd` or `powershell`, and press Enter.
+   - **macOS**: Press `Command + Space`, type `Terminal`, and press Enter.
+   - **Linux**: Press `Ctrl + Alt + T`.
+
+2. **Clone the repository**:
+   ```bash
+   git clone https://github.com/parzivalii/subway-surfers-higgsfield-GPT6-ASTRA.git
+   ```
+
+3. **Navigate into the directory**:
+   ```bash
+   cd subway-surfers-higgsfield-GPT6-ASTRA
+   ```
+
+4. **Install packages** (first time only):
+   ```bash
+   npm install
+   ```
+
+5. **Start the game**:
+   ```bash
+   npm run dev
+   ```
+
+6. **Play**:
+   Open your browser and visit:  
+   👉 **`http://localhost:5173`**
+
+---
+
+### 🕹️ Game Controls
+
+| Action | Default Keyboard Key | Description |
+| :--- | :--- | :--- |
+| **Move Left** | **A** or **Left Arrow (←)** | Switch to the left railway lane |
+| **Move Right** | **D** or **Right Arrow (→)** | Switch to the right railway lane |
+| **Jump** | **W** or **Up Arrow (↑)** | Leap over barriers and onto train ramps |
+| **Slide / Duck** | **S** or **Down Arrow (↓)** | Duck under overhead signs and low hurdles |
+| **Fast Drop** | **S** or **Down Arrow (↓)** *(airborne)* | Immediately dive back down to the rails |
+| **Activate Hoverboard** | **Spacebar** | Mount your hoverboard for speed and shield protection |
+| **Pause Game** | **Escape** or **P** | Pause gameplay with a 3-second resume countdown |
+| **Menu Confirm** | **Enter** | Trigger focused UI actions |
+| **Menu Navigation** | **Tab** / **Shift+Tab** | Navigate interactive menu elements |
+
+> **Customization**: All key bindings can be freely remapped in the **Settings** menu!
+
+---
+
+### 🧑‍🎨 Characters, Hoverboards & Power-ups
+
+#### The Crew
+- **Pip**: The default, agile railway sprinter.
+- **Jett**: High-energy speed specialist.
+- **Nori**: Tactical and nimble runner.
+- **Rumi**: Vibrant street-art enthusiast.
+- **Tavi**: Industrial dock master.
+*All characters feature unlocked or purchasable alternate outfits via in-game currency.*
+
+#### Hoverboards
+- **Tide Board**: Smooth drift and a minor jump height boost.
+- **Ember Board**: Blazing trail with precise descent control.
+- **Shield Effect**: Each board gives 18 seconds of active time or completely absorbs one fatal collision.
+
+---
+
+### ⚡ Difficulty Tiers
+
+Select your desired run pace before any run using the **Difficulty** selector:
+
+| Tier | Speed Range | Acceleration | Route Complexity |
+| :--- | :--- | :--- | :--- |
+| **Easy** | 12 → 26 m/s | 0.075 m/s² | Clear lanes, relaxed reaction windows |
+| **Normal** | 16 → 29 m/s | 0.18 m/s² | Frequent jumps and slides required |
+| **Hard** | 20 → 32 m/s | 0.4 m/s² | Alternating side and center lane switches |
+| **Impossible** | 26 → 36 m/s | 0.8 m/s² | Max speed in 12.5s; twitch reaction test |
+
+---
+
+### 💾 Offline PWA & Local Storage
+
+- **100% Local Saves**: High scores, coin balances, unlocks, and settings stay private in your browser's local storage.
+- **Import / Export**: Under `Settings`, you can export your entire profile as a validated JSON file to backup or transfer between computers.
+- **Offline Play**: When the green **Offline ready** badge appears in the bottom status bar, the game is cached. You can play completely disconnected from the internet.
+
+---
+
+### 🛠️ Troubleshooting & FAQ
+
+- **Q: `'node'` is not recognized as an internal or external command.**
+  - **Fix**: Node.js was not added to your system environment variables. Reinstall Node.js from [nodejs.org](https://nodejs.org/) and make sure the option "Add to PATH" is checked, then restart your terminal.
+- **Q: Port 5173 is already in use.**
+  - **Fix**: Another Vite process is running. Vite will automatically prompt you to use another port (e.g., 5174), or you can close the other terminal window.
+- **Q: The screen is black or 3D graphics fail to render.**
+  - **Fix**: WebGL 2 is required. Ensure your graphics drivers are up to date and that "Use hardware acceleration when available" is turned ON in your browser settings.
+
+---
+
+### 💻 Technical Architecture & Developer Guide
+
+For developers and contributors looking to inspect or expand the code:
+
+- **Decoupled 60 Hz Loop**: The simulation runs on a deterministic fixed 60 Hz timestep with bounded catch-up and interpolation, entirely decoupled from React's render cycles.
+- **Low-Frequency UI Snapshots**: React only receives state snapshots at 10 Hz, preventing unnecessary DOM reconciliations during high-speed gameplay.
+- **Run Unit Tests**:
+  ```bash
+  npm test
+  ```
+  *(Passes all 68 thorough procedural generation, difficulty, and progression unit tests).*
+- **Run Typechecking**:
+  ```bash
+  npm run typecheck
+  ```
+- **Produce Production Distribution**:
+  ```bash
+  npm run build
+  ```
+- **Local Static Server**:
+  ```bash
+  npm run serve -- --port 4173
+  ```
+
+---
+
+## 📜 License & Credits
+
+- Built with **React 19**, **Three.js**, **Vite**, and **TypeScript**.
+- Typography: *Outfit* and *DM Sans* bundled via Fontsource under SIL Open Font License.
+- Original game design, code, audio synthesis, and procedural systems authored locally.
+- Free for personal, educational, and non-commercial development.

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-09-08T15:45:38.589Z",
+  "browser": "firefox",
+  "checks": [
+    "Difficulty selector appears below Let’s Run",
+    "Fresh run requires choice; Escape cancels; keyboard focus wraps",
+    "Easy: actual speed, keyboard movement, results, restart without prompt",
+    "Normal: actual speed, keyboard movement, results, restart without prompt",
+    "Hard: actual speed, keyboard movement, results, restart without prompt",
+    "Impossible: actual speed, keyboard movement, results, restart without prompt",
+    "Challenge restart preserves seed, mode and difficulty",
+    "Difficulty labels persist after reload and render in records",
+    "New difficulty selection and play work after actual offline reload"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "status": "passed"
+}
